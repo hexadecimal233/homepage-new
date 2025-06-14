@@ -11,22 +11,22 @@ export default defineNuxtConfig({
   app: {
     head: {
       charset: "utf-8",
-      title: "Nuxt Template page",
+      title: "Hexzii ｡+..｡ﾟ☆",
       meta: [
         {
           name: "description",
-          content: "The nuxt template page",
+          content: "Hexzii's personal profile website.",
         },
         {
           name: "keywords",
-          content: "Keywordd 1, Keywordd 2, Keywordd 3",
+          content: "Homepage, Profile, hexadecimal233, Hexzii⭐, 盒沐子",
         },
       ],
       link: [
         {
           rel: "icon",
-          type: "image/icon",
-          href: "/favicon.ico",
+          type: "image/png",
+          href: "https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567",
         },
         {
           //rel: "stylesheet",
