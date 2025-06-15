@@ -29,8 +29,8 @@ export default defineNuxtConfig({
           href: "https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567",
         },
         {
-          //rel: "stylesheet",
-          //href: "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap",
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Lilita+One&display=swapp",
         },
       ],
     },

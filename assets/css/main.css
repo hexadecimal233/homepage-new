@@ -1,1 +1,10 @@
 /* Universal Styles */
+@import "tailwindcss";
+
+.lilita-one-regular {
+  font-family: "Lilita One", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+
