@@ -9,7 +9,7 @@
     <div
       class="mx-auto w-full max-w-3xl rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md *:my-2">
       <div class="flex">
-        <NuxtImg
+        <img
           src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
           class="h-32 w-32 rounded-xl border-4 shadow-lg" />
         <div class="mt-2 ml-4">
@@ -103,7 +103,7 @@
           <p class="text-md text-gray-500">CTL-472</p>
         </div>
         <div class="card-item">
-          <NuxtImg src="/assets/img/arturia.png" class="h-12" />
+          <img src="assets/img/arturia.png" class="h-12" />
           <p>Arturia</p>
           <p class="text-md text-gray-500">Minilab 3</p>
         </div>
@@ -126,7 +126,8 @@
           <div class="flex text-lg">
             <NuxtImg
               :src="`https://github.com/${project.gh.user}.png`"
-              class="mr-2 h-6 w-6 rounded-md" />
+              class="mr-2 h-6 w-6 rounded-md"
+              loading="lazy" />
             <a
               class="font-bold text-pink-300"
               :href="project.url"
@@ -172,7 +173,11 @@
           target="_blank"
           class="flex flex-row items-center bg-black/30 text-xl transition-all duration-200 *:px-1 hover:-translate-y-0.5 hover:bg-black/50">
           <Icon :name="link.icon" />
-          <NuxtImg :src="link.image" v-if="link.image" class="object-contain" />
+          <NuxtImg
+            :src="link.image"
+            v-if="link.image"
+            class="object-contain"
+            loading="lazy" />
           <p>{{ link.name }}</p>
           <p class="text-gray-500">{{ link.desc }}</p>
         </a>
@@ -186,7 +191,11 @@
           target="_blank"
           class="flex flex-row items-center bg-black/30 text-xl transition-all duration-200 *:px-1 hover:-translate-y-0.5 hover:bg-black/50">
           <Icon :name="link.icon" />
-          <NuxtImg :src="link.image" v-if="link.image" class="object-contain" />
+          <NuxtImg
+            :src="link.image"
+            v-if="link.image"
+            class="object-contain"
+            loading="lazy" />
           <p>{{ link.name }}</p>
           <p class="text-gray-500">{{ link.desc }}</p>
         </a>
