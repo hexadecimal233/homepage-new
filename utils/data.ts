@@ -6,7 +6,61 @@ interface Link {
   url: string
 }
 
-interface Project {}
+interface Project {
+  url: string
+  desc: string
+  archived: boolean
+}
+
+export function extractGithubLink(url: string) {
+  const match = url.match(/github\.com\/(.+)\/(.+)/)
+  return match
+    ? { user: match[1], repo: match[2] }
+    : { user: "Error", repo: "Error" }
+}
+
+export const projects: Project[] = [
+  {
+    url: "https://github.com/hexadecimal233/bili-signature",
+    desc: "b站自动改签名~",
+    archived: false,
+  },
+  {
+    url: "https://github.com/hexadecimal233/chongchong-free",
+    desc: "虫虫钢琴乐谱下载工具",
+    archived: false,
+  },
+  {
+    url: "https://github.com/hexadecimal233/zeitgeist-addon",
+    desc: "Meteor Client的一个插件",
+    archived: true,
+  },
+  {
+    url: "https://github.com/hexadecimal233/Windows-Store-Downloader",
+    desc: "Windows Store appx包下载器",
+    archived: false,
+  },
+  {
+    url: "https://github.com/LemonClientDevelopment/nsm",
+    desc: "Yes Steve Model 老版模型解密工具",
+    archived: false,
+  },
+  {
+    url: "https://github.com/hexadecimal233/midi-visualizer",
+    desc: "模仿一些音mad里的MIDI可视化工具",
+    archived: false,
+  },
+  {
+    url: "https://github.com/hexadecimal233/esp32c3-singing-stepper",
+    desc: "电机唱歌~",
+    archived: false,
+  },
+  {
+    url: "https://github.com/hexadecimal233/mcsm-reg",
+    desc: "MCSM的一个注册WebUI",
+    archived: true,
+  },
+]
 
 export const contact: Link[] = [
   {
@@ -119,6 +173,18 @@ export const social: Link[] = [
     desc: "hexadecimal233",
     icon: "simple-icons:gitlab",
     url: "https://gitlab.com/hexadecimal233",
+  },
+  {
+    name: "Gitee",
+    desc: "HexLLKawizii",
+    icon: "simple-icons:gitee",
+    url: "https://gitee.com/LLKawi",
+  },
+  {
+    name: "Codeberg",
+    desc: "Hexzii",
+    icon: "simple-icons:codeberg",
+    url: "https://codeberg.org/hexzii",
   },
   {
     name: "X (Main)",

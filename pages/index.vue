@@ -9,7 +9,7 @@
     <div
       class="mx-auto w-full max-w-3xl rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md *:my-2">
       <div class="flex">
-        <img
+        <NuxtImg
           src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
           class="h-32 w-32 rounded-xl border-4 shadow-lg" />
         <div class="mt-2 ml-4">
@@ -103,7 +103,7 @@
           <p class="text-md text-gray-500">CTL-472</p>
         </div>
         <div class="card-item">
-          <img src="/assets/img/arturia.png" class="h-12" />
+          <NuxtImg src="/assets/img/arturia.png" class="h-12" />
           <p>Arturia</p>
           <p class="text-md text-gray-500">Minilab 3</p>
         </div>
@@ -111,11 +111,30 @@
 
       <p class="section">Projects</p>
 
-      <div class="cards">
-        <div class="card-item">
-          <Icon name="mdi:directions-run" class="text-5xl" />
-          <p class="text-md">Stay Tuned...</p>
-          <p class="text-sm text-gray-500">Under Construction</p>
+      <!--- 敬请期待占位
+      <div class="card-item">
+        <Icon name="mdi:directions-run" class="text-5xl" />
+        <p class="text-md">Stay Tuned...</p>
+        <p class="text-sm text-gray-500">Under Construction</p>
+      </div>-->
+
+      <div class="projects">
+        <div
+          class="project-item"
+          v-for="project in processedProjects"
+          :class="project.archived ? 'archived' : ''">
+          <div class="flex text-lg">
+            <NuxtImg
+              :src="`https://github.com/${project.gh.user}.png`"
+              class="mr-2 h-6 w-6 rounded-md" />
+            <a
+              class="font-bold text-pink-300"
+              :href="project.url"
+              target="_blank">
+              {{ project.gh.user }}/{{ project.gh.repo }}
+            </a>
+          </div>
+          <p class="text-sm text-gray-300">{{ project.desc }}</p>
         </div>
       </div>
 
@@ -129,7 +148,7 @@
         </a>
         or
         <!-- 到时候不能再摆了要多做点项目去宣传！！ -->
-        <a href="https://www.paypal.me/hexzii" class="text-blue-300">
+        <a href="https://afdian.com/a/hexzii" class="text-blue-300">
           <Icon name="simple-icons:afdian" />
           Afdian (CN)
         </a>
@@ -140,7 +159,8 @@
         (actually there's nothing here yet🫣)
         <!--
         <QR name="支付宝" image="/assets/img/alipay.png" color="#1678ff"></QR>
-        <QR name="微信" image="/assets/img/wechat.png" color="#07c160"></QR>     
+        <QR name="微信" image="/assets/img/wechat.png" color="#07c160"></QR>    
+        TODO: PayPal / etc.
         -->
       </p>
 
@@ -149,9 +169,10 @@
       <div v-for="link in contact" class="w-full">
         <a
           :href="link.url"
+          target="_blank"
           class="flex flex-row items-center bg-black/30 text-xl transition-all duration-200 *:px-1 hover:-translate-y-0.5 hover:bg-black/50">
           <Icon :name="link.icon" />
-          <img :src="link.image" v-if="link.image" class="object-contain" />
+          <NuxtImg :src="link.image" v-if="link.image" class="object-contain" />
           <p>{{ link.name }}</p>
           <p class="text-gray-500">{{ link.desc }}</p>
         </a>
@@ -162,9 +183,10 @@
       <div v-for="link in social" class="w-full">
         <a
           :href="link.url"
+          target="_blank"
           class="flex flex-row items-center bg-black/30 text-xl transition-all duration-200 *:px-1 hover:-translate-y-0.5 hover:bg-black/50">
           <Icon :name="link.icon" />
-          <img :src="link.image" v-if="link.image" class="object-contain" />
+          <NuxtImg :src="link.image" v-if="link.image" class="object-contain" />
           <p>{{ link.name }}</p>
           <p class="text-gray-500">{{ link.desc }}</p>
         </a>
@@ -190,6 +212,14 @@
 
 .card-item {
   @apply flex flex-col items-center justify-center rounded-lg bg-black/30 px-2 py-4 text-xl shadow-lg transition-all duration-200 hover:bg-black/50;
+}
+
+.projects {
+  @apply my-2 grid grid-cols-1 gap-4;
+}
+
+.project-item {
+  @apply flex flex-col rounded-lg bg-black/30 px-2 py-4 font-sans text-xl shadow-lg transition-all duration-200 *:my-1 hover:bg-black/50;
 }
 
 .bg-pattern {
@@ -224,7 +254,15 @@
 </style>
 
 <script lang="ts" setup>
-import { social, contact } from "~/utils/data"
+import { social, contact, projects, extractGithubLink } from "~/utils/data"
+
+const processedProjects = projects.map((project) => {
+  const githubInfo = extractGithubLink(project.url)
+  return {
+    ...project,
+    gh: githubInfo,
+  }
+})
 
 const age = Math.floor(
   (new Date().getTime() - new Date("2007/11/08").getTime()) /
