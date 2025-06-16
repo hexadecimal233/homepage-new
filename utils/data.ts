@@ -209,7 +209,7 @@ export const social: Link[] = [
     desc: "Hexzii's Hideout",
     icon: "simple-icons:discord",
     image:
-      "https://img.shields.io/discord/1272325246015504414?color=7289DA&label=My Server&logo=discord&logoColor=white&style=flat-square",
+      "https://img.shields.io/discord/1272325246015504414?color=7289DA&label=My%20Server&logo=discord&logoColor=white&style=flat-square",
     url: "https://discord.gg/ABykspBYVz",
   },
 ]

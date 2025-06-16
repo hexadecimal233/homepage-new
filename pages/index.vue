@@ -1,30 +1,20 @@
 <template>
-  <div class="fixed top-0 left-0 z-[-1] h-full w-full bg-slate-900">
-    <div class="bg-pattern absolute inset-0"></div>
-    <!-- TODO: 动态背景-->
-  </div>
-
-  <div
-    class="lilita-one-regular flex flex-col items-center justify-between px-4 py-4">
+  <div class="flex flex-col items-center justify-between px-4 py-4">
     <div
-      class="mx-auto w-full max-w-3xl rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md *:my-2">
+      class="lilita-one-regular mx-auto w-full max-w-3xl rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md *:my-2">
       <div class="flex">
         <img
           src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
           class="h-32 w-32 rounded-xl border-4 shadow-lg" />
         <div class="mt-2 ml-4">
-          <span
-            class="rainbow-flasher absolute top-8 right-4 -rotate-6 font-sans text-2xl font-bold whitespace-nowrap">
-            I'm just a Splash!!
-          </span>
-          <div class="relative flex items-end text-4xl *:mr-1">
+          <div class="relative flex flex-wrap items-end text-4xl *:mr-1">
             <p class="text-pink-300">Hexzii</p>
 
-            <p class="font-sans text-2xl font-bold text-gray-500">
+            <p class="font-sans text-2xl font-bold text-gray-400">
               (a.k.a. 盒沐子)
             </p>
           </div>
-          <p class="font-mono text-2xl font-bold text-gray-500">
+          <p class="font-mono text-2xl font-bold text-gray-400">
             {{ age }} y/o / coding / music
             <br />
             An Unrealistic Dreamer
@@ -69,18 +59,18 @@
         <div class="card-item">
           <Icon name="logos:microsoft-windows-icon" class="text-3xl" />
           <p>Windows 11</p>
-          <p class="text-md text-gray-500">PC</p>
+          <p class="text-md text-gray-400">PC</p>
         </div>
         <div class="card-item">
           <Icon name="logos:android-icon" class="text-3xl" />
           <p>Android</p>
-          <p class="text-md text-gray-500">MIUI</p>
+          <p class="text-md text-gray-400">MIUI</p>
         </div>
         <div class="card-item">
           <!-- 到时候再整一台电脑一定要装个archlinux或者nixos然后换上蓝粉白配色 （xnn刻板印象时刻🤤）-->
           <Icon name="logos:manjaro" class="text-3xl" />
           <p>Linux</p>
-          <p class="text-md text-gray-500">Manjaro</p>
+          <p class="text-md text-gray-400">Manjaro</p>
         </div>
       </div>
 
@@ -90,22 +80,22 @@
         <div class="card-item">
           <Icon name="simple-icons:pioneerdj" class="text-3xl" />
           <p>Pioneer</p>
-          <p class="text-md text-gray-500">DDJ-FLX4</p>
+          <p class="text-md text-gray-400">DDJ-FLX4</p>
         </div>
         <div class="card-item">
           <Icon name="simple-icons:sony" class="text-3xl" />
           <p>Sony</p>
-          <p class="text-md text-gray-500">A-6700</p>
+          <p class="text-md text-gray-400">A-6700</p>
         </div>
         <div class="card-item">
           <Icon name="simple-icons:wacom" class="text-3xl" />
           <p>Wacom</p>
-          <p class="text-md text-gray-500">CTL-472</p>
+          <p class="text-md text-gray-400">CTL-472</p>
         </div>
         <div class="card-item">
           <img src="/assets/img/arturia.png" class="h-12" />
           <p>Arturia</p>
-          <p class="text-md text-gray-500">Minilab 3</p>
+          <p class="text-md text-gray-400">Minilab 3</p>
         </div>
       </div>
 
@@ -115,7 +105,7 @@
       <div class="card-item">
         <Icon name="mdi:directions-run" class="text-5xl" />
         <p class="text-md">Stay Tuned...</p>
-        <p class="text-sm text-gray-500">Under Construction</p>
+        <p class="text-sm text-gray-400">Under Construction</p>
       </div>-->
 
       <div class="projects">
@@ -129,10 +119,15 @@
               class="mr-2 h-6 w-6 rounded-md"
               loading="lazy" />
             <a
-              class="font-bold text-pink-300"
+              class="flex font-bold text-pink-300"
               :href="project.url"
               target="_blank">
-              {{ project.gh.user }}/{{ project.gh.repo }}
+              <p>{{ project.gh.user }}/{{ project.gh.repo }}</p>
+              <div
+                v-show="project.archived"
+                class="ml-2 rounded-2xl border-2 border-gray-500 px-1 py-0.5 text-sm text-gray-400">
+                Archived
+              </div>
             </a>
           </div>
           <p class="text-sm text-gray-300">{{ project.desc }}</p>
@@ -143,7 +138,7 @@
 
       <p class="font-sans text-lg">
         Love my works? Consider donating to support me on
-        <a href="https://ko-fi.com/hexzii" class="text-pink-300">
+        <a href="https://ko-fi.com/hexzii" class="text-red-400">
           <Icon name="simple-icons:kofi" />
           Ko-Fi
         </a>
@@ -179,9 +174,40 @@
             class="object-contain"
             loading="lazy" />
           <p>{{ link.name }}</p>
-          <p class="text-gray-500">{{ link.desc }}</p>
+          <p class="text-gray-400">{{ link.desc }}</p>
         </a>
       </div>
+
+      <hr class="divider" />
+
+      <div class="flex flex-col">
+        <div class="mb-1 font-sans">
+          <p class="text-amber-400">
+            Send me anonymous DMs!! (friend link requests welcome!!)
+          </p>
+          <p class="text-sm text-gray-400">
+            To make a friend link request, site name, site link (avatar and
+            description is optional) is all you need!
+          </p>
+        </div>
+        <p v-show="nglError !== ''" class="text-green-500">{{ nglError }}</p>
+        <div class="flex gap-4">
+          <textarea
+            class="flex-4/5 rounded-xl bg-black/30 p-2"
+            v-model="nglMessage"
+            placeholder="ask me anything!" />
+          <button
+            class="btn flex flex-1/5 flex-col items-center justify-center rounded-2xl bg-pink-400 text-xl"
+            @click="sendNGLMessage">
+            <p>Send!</p>
+            <p class="text-xs text-gray-200">(via NGL)</p>
+          </button>
+        </div>
+      </div>
+
+      <p class="section">Friend Links</p>
+
+      <div class="font-sans">It's so lonely here...</div>
 
       <p class="section">Social Network</p>
 
@@ -197,7 +223,7 @@
             class="object-contain"
             loading="lazy" />
           <p>{{ link.name }}</p>
-          <p class="text-gray-500">{{ link.desc }}</p>
+          <p class="text-gray-400">{{ link.desc }}</p>
         </a>
       </div>
     </div>
@@ -229,20 +255,34 @@
 
 .project-item {
   @apply flex flex-col rounded-lg bg-black/30 px-2 py-4 font-sans text-xl shadow-lg transition-all duration-200 *:my-1 hover:bg-black/50;
+
+  &.archived {
+    @apply brightness-75;
+  }
 }
 
-.bg-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-  background-size: 20px 20px;
-  background-position: center center;
+.minecraft-splash {
+  color: #fefe00;
+  animation: splash 0.5s infinite ease-in-out;
+}
+
+@keyframes splash {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .rainbow-flasher {
   animation: rainbow-flash 1s infinite;
   background-clip: text;
 }
+
 @keyframes rainbow-flash {
   from {
     color: #6666ff;
@@ -281,4 +321,37 @@ const age = Math.floor(
     24 /
     365,
 )
+
+const nglMessage = ref("")
+const nglError = ref("")
+
+// 因为CORS所以就获取不到返回结果了
+async function sendNGLMessage() {
+  nglError.value = ""
+  const username = "hexadecimal2"
+
+  // @ts-ignore 生成设备id
+  const deviceId = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (
+      c ^
+      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
+    ).toString(16),
+  )
+
+  const body = new URLSearchParams({
+    username,
+    question: nglMessage.value,
+    deviceId: deviceId,
+    gameSlug: "",
+    referrer: "",
+  })
+
+  const resp = await fetch("https://ngl.link/api/submit", {
+    method: "POST",
+    body,
+    mode: "no-cors",
+  })
+
+  nglError.value = "Successfully sent!"
+}
 </script>
