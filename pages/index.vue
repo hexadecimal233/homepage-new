@@ -103,7 +103,7 @@
           <p class="text-md text-gray-500">CTL-472</p>
         </div>
         <div class="card-item">
-          <img src="assets/img/arturia.png" class="h-12" />
+          <img src="/assets/img/arturia.png" class="h-12" />
           <p>Arturia</p>
           <p class="text-md text-gray-500">Minilab 3</p>
         </div>
