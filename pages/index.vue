@@ -1,13 +1,17 @@
 <template>
   <div class="flex flex-col items-center justify-between px-4 py-4">
     <div
-      class="lilita-one-regular mx-auto w-full max-w-3xl rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md *:my-2">
+      class="lilita-one-regular mx-auto w-full max-w-3xl space-y-2 rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md">
       <div class="flex">
         <img
           src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
           class="h-32 w-32 rounded-xl border-4 shadow-lg" />
         <div class="mt-2 ml-4">
-          <div class="relative flex flex-wrap items-end text-4xl *:mr-1">
+          <div
+            class="minecraft-splash absolute top-4 right-4 flex -rotate-6 text-2xl font-bold">
+            <p class="font-sans whitespace-nowrap">🤔</p>
+          </div>
+          <div class="relative flex flex-wrap items-end space-x-1 text-4xl">
             <p class="text-pink-300">Hexzii</p>
 
             <p class="font-sans text-2xl font-bold text-gray-400">
@@ -166,7 +170,7 @@
         <a
           :href="link.url"
           target="_blank"
-          class="flex flex-row items-center bg-black/30 text-xl transition-all duration-200 *:px-1 hover:-translate-y-0.5 hover:bg-black/50">
+          class="flex flex-row items-center space-x-1 bg-black/30 text-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-black/50">
           <Icon :name="link.icon" />
           <NuxtImg
             :src="link.image"
@@ -215,7 +219,7 @@
         <a
           :href="link.url"
           target="_blank"
-          class="flex flex-row items-center bg-black/30 text-xl transition-all duration-200 *:px-1 hover:-translate-y-0.5 hover:bg-black/50">
+          class="flex flex-row items-center space-x-1 bg-black/30 text-xl transition-all duration-200 hover:-translate-y-0.5 hover:bg-black/50">
           <Icon :name="link.icon" />
           <NuxtImg
             :src="link.image"
@@ -254,7 +258,7 @@
 }
 
 .project-item {
-  @apply flex flex-col rounded-lg bg-black/30 px-2 py-4 font-sans text-xl shadow-lg transition-all duration-200 *:my-1 hover:bg-black/50;
+  @apply flex flex-col space-y-1 rounded-lg bg-black/30 px-2 py-4 font-sans text-xl shadow-lg transition-all duration-200 hover:bg-black/50;
 
   &.archived {
     @apply brightness-75;
@@ -263,7 +267,7 @@
 
 .minecraft-splash {
   color: #fefe00;
-  animation: splash 0.5s infinite ease-in-out;
+  animation: splash 0.65s infinite ease-in-out;
 }
 
 @keyframes splash {
