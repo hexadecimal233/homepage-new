@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center justify-between px-4 py-4">
     <div
-      class="lilita-one-regular mx-auto w-full max-w-3xl space-y-2 rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md">
+      class="mx-auto w-full max-w-3xl space-y-2 rounded-2xl bg-white/10 px-6 py-8 text-white shadow-lg backdrop-blur-md">
       <div class="flex">
         <img
           src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
@@ -9,14 +9,12 @@
         <div class="mt-2 ml-4">
           <div
             class="minecraft-splash absolute top-4 right-4 flex -rotate-6 text-2xl font-bold">
-            <p class="font-sans whitespace-nowrap">🤔</p>
+            <p class="whitespace-nowrap">🤔</p>
           </div>
           <div class="relative flex flex-wrap items-end space-x-1 text-4xl">
-            <p class="text-pink-300">Hexzii</p>
+            <p class="lilita-one-regular text-pink-300">Hexzii</p>
 
-            <p class="font-sans text-2xl font-bold text-gray-400">
-              (a.k.a. 盒沐子)
-            </p>
+            <p class="text-2xl font-bold text-gray-400">(a.k.a. 盒沐子)</p>
           </div>
           <p class="font-mono text-2xl font-bold text-gray-400">
             {{ age }} y/o / coding / music
@@ -28,9 +26,9 @@
 
       <hr class="divider" />
 
-      <p class="section">About me</p>
+      <p class="section lilita-one-regular">About me</p>
 
-      <p class="font-sans text-lg">
+      <p class="text-lg">
         I'm a
         <strong>passionate developer</strong>
         and
@@ -44,9 +42,9 @@
         with other devs / producers and create something fire!!!!
       </p>
 
-      <p class="section">Languages</p>
+      <p class="section lilita-one-regular">Languages</p>
 
-      <div class="cards">
+      <div class="cards lilita-one-regular">
         <div class="card-item">
           <Icon name="twemoji:flag-united-states" class="text-3xl" />
           <p>English</p>
@@ -57,9 +55,9 @@
         </div>
       </div>
 
-      <p class="section">Operating System</p>
+      <p class="section lilita-one-regular">Operating System</p>
 
-      <div class="cards">
+      <div class="cards lilita-one-regular">
         <div class="card-item">
           <Icon name="logos:microsoft-windows-icon" class="text-3xl" />
           <p>Windows 11</p>
@@ -78,9 +76,9 @@
         </div>
       </div>
 
-      <p class="section">Creativity Gear</p>
+      <p class="section lilita-one-regular">Creativity Gear</p>
 
-      <div class="cards">
+      <div class="cards lilita-one-regular">
         <div class="card-item">
           <Icon name="simple-icons:pioneerdj" class="text-3xl" />
           <p>Pioneer</p>
@@ -103,7 +101,7 @@
         </div>
       </div>
 
-      <p class="section">Projects</p>
+      <p class="section lilita-one-regular">Projects</p>
 
       <!--- 敬请期待占位
       <div class="card-item">
@@ -123,13 +121,13 @@
               class="mr-2 h-6 w-6 rounded-md"
               loading="lazy" />
             <a
-              class="flex font-bold text-pink-300"
+              class="flex items-baseline gap-2 font-bold text-pink-300"
               :href="project.url"
               target="_blank">
               <p>{{ project.gh.user }}/{{ project.gh.repo }}</p>
               <div
                 v-show="project.archived"
-                class="ml-2 rounded-2xl border-2 border-gray-500 px-1 py-0.5 text-sm text-gray-400">
+                class="flex max-h-lh items-center rounded-2xl border-2 border-gray-500 px-1 py-0.5 text-sm text-gray-400">
                 Archived
               </div>
             </a>
@@ -138,9 +136,9 @@
         </div>
       </div>
 
-      <p class="section">Store</p>
+      <p class="section lilita-one-regular">Store</p>
 
-      <p class="font-sans text-lg">
+      <p class="text-lg">
         Love my works? Consider donating to support me on
         <a href="https://ko-fi.com/hexzii" class="text-red-400">
           <Icon name="simple-icons:kofi" />
@@ -164,9 +162,9 @@
         -->
       </p>
 
-      <p class="section">Contact Me</p>
+      <p class="section lilita-one-regular">Contact Me</p>
 
-      <div v-for="link in contact" class="w-full">
+      <div v-for="link in contact" class="lilita-one-regular w-full">
         <a
           :href="link.url"
           target="_blank"
@@ -185,7 +183,7 @@
       <hr class="divider" />
 
       <div class="flex flex-col">
-        <div class="mb-1 font-sans">
+        <div class="mb-1">
           <p class="text-amber-400">
             Send me anonymous DMs!! (friend link requests welcome!!)
           </p>
@@ -201,21 +199,20 @@
             v-model="nglMessage"
             placeholder="ask me anything!" />
           <button
-            class="btn flex flex-1/5 flex-col items-center justify-center rounded-2xl bg-pink-400 text-xl"
+            class="lilita-one-regular flex flex-1/5 flex-col items-center justify-center rounded-2xl bg-pink-400 text-xl"
             @click="sendNGLMessage">
             <p>Send!</p>
-            <p class="text-xs text-gray-200">(via NGL)</p>
           </button>
         </div>
       </div>
 
-      <p class="section">Friend Links</p>
+      <p class="section lilita-one-regular">Friend Links</p>
 
-      <div class="font-sans">It's so lonely here...</div>
+      <div>It's so lonely here...</div>
 
-      <p class="section">Social Network</p>
+      <p class="section lilita-one-regular">Social Network</p>
 
-      <div v-for="link in social" class="w-full">
+      <div v-for="link in social" class="lilita-one-regular w-full">
         <a
           :href="link.url"
           target="_blank"
@@ -258,7 +255,7 @@
 }
 
 .project-item {
-  @apply flex flex-col space-y-1 rounded-lg bg-black/30 px-2 py-4 font-sans text-xl shadow-lg transition-all duration-200 hover:bg-black/50;
+  @apply flex flex-col space-y-1 rounded-lg bg-black/30 px-2 py-4 text-xl shadow-lg transition-all duration-200 hover:bg-black/50;
 
   &.archived {
     @apply brightness-75;
