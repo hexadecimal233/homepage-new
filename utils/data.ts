@@ -19,6 +19,13 @@ interface FriendLink {
   image?: string
 }
 
+interface SiteLink {
+  name: string
+  url: string
+  desc?: string
+  icon: string
+}
+
 export function extractGithubLink(url: string) {
   const match = url.match(/github\.com\/(.+)\/(.+)/)
   return match
@@ -234,5 +241,23 @@ export const friendLinks: FriendLink[] = [
     url: "https://www.travellings.cn/go.html",
     desc: "Web Travelling!",
     image: "https://www.travellings.cn/assets/travelling-dark.png",
+  },
+]
+
+export const sites: SiteLink[] = [
+  {
+    name: "My Profile Page",
+    url: "https://nichijou.moe",
+    icon: "mdi:account",
+  },
+  {
+    name: "My Blog",
+    url: "https://me.onlyra1n.top",
+    icon: "mdi:book-open",
+  },
+  {
+    name: "Uptime Monitor",
+    url: "https://stats.uptimerobot.com/7rGZ5HE96Q",
+    icon: "mdi:clock-fast",
   },
 ]

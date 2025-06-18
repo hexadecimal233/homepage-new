@@ -217,10 +217,38 @@
           </div>
         </div>
         -->
+
+        <div class="sidebar-card">
+          <div class="flex items-center gap-2">
+            <Icon name="mdi:home" class="text-2xl text-pink-300" />
+            <p class="lilita-one-regular text-xl">My Sites</p>
+          </div>
+          <div class="mt-2 space-y-2">
+            <div v-for="link in sites">
+              <a
+                :href="link.url"
+                target="_blank"
+                class="flex items-center gap-2 rounded-lg bg-black/20 p-2 transition-all hover:bg-black/40">
+                <div
+                  class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-500/20">
+                  <Icon :name="link.icon" class="text-2xl text-pink-300" />
+                </div>
+
+                <div class="min-w-0 flex-1">
+                  <p class="truncate font-bold">{{ link.name }}</p>
+                  <p class="text-sm break-all text-gray-400">
+                    {{ link.desc }}
+                  </p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class="sidebar-card">
           <div class="flex items-center gap-2">
             <Icon name="mdi:link" class="text-2xl text-pink-300" />
-            <h3 class="lilita-one-regular text-xl">Friend Links</h3>
+            <p class="lilita-one-regular text-xl">Friend Links</p>
           </div>
           <div class="mt-2 space-y-2">
             <div v-for="link in friendLinks">
@@ -259,11 +287,7 @@
             <p class="text-amber-400">
               Send me Anonymous DMs!! (friend link requests welcome!!)
             </p>
-            <p class="text-xs text-gray-400">
-              To make a friend link request, .
-            </p>
 
-            <p />
             <p v-show="nglError !== ''" class="text-green-500">
               {{ nglError }}
             </p>
@@ -370,6 +394,7 @@ import {
   projects,
   extractGithubLink,
   friendLinks,
+  sites,
 } from "~/utils/data"
 
 const processedProjects = projects.map((project) => {
