@@ -12,6 +12,13 @@ interface Project {
   archived: boolean
 }
 
+interface FriendLink {
+  name: string
+  url: string
+  desc?: string
+  image?: string
+}
+
 export function extractGithubLink(url: string) {
   const match = url.match(/github\.com\/(.+)\/(.+)/)
   return match
@@ -211,5 +218,21 @@ export const social: Link[] = [
     image:
       "https://img.shields.io/discord/1272325246015504414?color=7289DA&label=My%20Server&logo=discord&logoColor=white&style=flat-square",
     url: "https://discord.gg/ABykspBYVz",
+  },
+]
+
+export const friendLinks: FriendLink[] = [
+  // {
+  //   name: "Wanna submit yours?",
+  //   url: "#",
+  //   desc: "Leave Site Name, Site Link (Image / Description is optional) and reach me.",
+  // },
+  // TODO: 将博客的友链转移这儿来
+  // 开往 Travellings
+  {
+    name: "Travellings",
+    url: "https://www.travellings.cn/go.html",
+    desc: "Web Travelling!",
+    image: "https://www.travellings.cn/assets/travelling-dark.png",
   },
 ]
