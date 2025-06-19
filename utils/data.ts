@@ -229,12 +229,6 @@ export const social: Link[] = [
 ]
 
 export const friendLinks: FriendLink[] = [
-  // {
-  //   name: "Wanna submit yours?",
-  //   url: "#",
-  //   desc: "Leave Site Name, Site Link (Image / Description is optional) and reach me.",
-  // },
-  // TODO: 将博客的友链转移这儿来
   // 开往 Travellings
   {
     name: "Travellings",
@@ -242,6 +236,29 @@ export const friendLinks: FriendLink[] = [
     desc: "Web Travelling!",
     image: "https://www.travellings.cn/assets/travelling-dark.png",
   },
+  {
+    name: "wuziqian211's Blog",
+    url: "https://wuziqian211.top/",
+    desc: "不求最好，只求更好。",
+    image: "https://wuziqian211.top/images/face.png",
+  },
+  {
+    name: "水水的小屋🏡~",
+    url: "https://www.happycola.top/",
+    desc: "水水的小屋🏡~",
+    image: "https://www.happycola.top/img/avatar.png",
+  },
+  {
+    name: "StellarLane's Blog",
+    url: "https://stellarlane.github.io/",
+    desc: "Life's short, why does it take so long?",
+    image: "https://ooo.0x0.ooo/2024/07/29/ORlrtq.png",
+  },
+  // {
+  //   name: "Wanna submit yours?",
+  //   url: "#",
+  //   desc: "Leave Site Name, Site Link (Image / Description is optional) and reach me.",
+  // },
 ]
 
 export const sites: SiteLink[] = [
