@@ -164,40 +164,43 @@
         TODO: PayPal / etc.
         --></p>
 
-        <p class="section lilita-one-regular">Contact Me</p>
+        <p class="section lilita-one-regular">Links</p>
 
-        <div v-for="link in contact" class="lilita-one-regular w-full">
-          <a
-            :href="link.url"
-            target="_blank"
-            class="flex flex-row items-center space-x-1 bg-black/30 text-xl transition-all hover:-translate-y-0.5 hover:bg-black/50">
-            <Icon :name="link.icon" />
-            <NuxtImg
-              :src="link.image"
-              v-if="link.image"
-              class="h-[0.7lh]"
-              loading="lazy" />
-            <p>{{ link.name }}</p>
-            <p class="text-gray-400">{{ link.desc }}</p>
-          </a>
-        </div>
+        <div
+          v-for="category in links"
+          :key="category.name"
+          class="lilita-one-regular w-full">
+          <div
+            class="flex cursor-pointer items-center justify-between bg-black/20 p-2 hover:bg-black/40"
+            @click="toggleCategory(category.name)">
+            <div class="flex items-center space-x-2">
+              <Icon
+                name="mdi:chevron-down"
+                :class="{ 'rotate-180': isExpanded(category.name) }" />
+              <h3 class="text-xl">{{ category.name }}</h3>
+            </div>
+            <p class="text-sm text-gray-400">{{ category.desc }}</p>
+          </div>
 
-        <p class="section lilita-one-regular">Social Network</p>
-
-        <div v-for="link in social" class="lilita-one-regular w-full">
-          <a
-            :href="link.url"
-            target="_blank"
-            class="flex flex-row items-center space-x-1 bg-black/30 text-xl transition-all hover:-translate-y-0.5 hover:bg-black/50">
-            <Icon :name="link.icon" />
-            <NuxtImg
-              :src="link.image"
-              v-if="link.image"
-              class="h-[0.7lh]"
-              loading="lazy" />
-            <p>{{ link.name }}</p>
-            <p class="text-gray-400">{{ link.desc }}</p>
-          </a>
+          <transition name="slide">
+            <div v-show="isExpanded(category.name)" class="mt-2 space-y-2 pl-2">
+              <div v-for="link in category.links" :key="link.name">
+                <a
+                  :href="link.url"
+                  target="_blank"
+                  class="flex flex-row items-center space-x-1 rounded-lg bg-black/30 p-2 transition-all hover:-translate-y-0.5 hover:bg-black/50">
+                  <Icon :name="link.icon" />
+                  <NuxtImg
+                    :src="link.image"
+                    v-if="link.image"
+                    class="h-[0.7lh]"
+                    loading="lazy" />
+                  <p>{{ link.name }}</p>
+                  <p class="text-gray-400">{{ link.desc }}</p>
+                </a>
+              </div>
+            </div>
+          </transition>
         </div>
       </div>
 
@@ -385,17 +388,50 @@
     color: #6666ff;
   }
 }
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.3s ease-in-out;
+  max-height: 200px;
+  overflow: hidden;
+}
+.slide-enter-from,
+.slide-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+  max-height: 0;
+}
 </style>
 
 <script lang="ts" setup>
 import {
-  social,
-  contact,
+  links,
   projects,
   extractGithubLink,
   friendLinks,
   sites,
 } from "~/utils/data"
+
+// 响应式状态：记录哪些分类是展开的
+const expandedCategories = ref<Set<string>>(
+  //new Set(links.map((cat) => cat.name)),
+  new Set(["Contact"]),
+)
+
+// 切换分类展开状态
+function toggleCategory(categoryName: string) {
+  const set = expandedCategories.value
+  if (set.has(categoryName)) {
+    set.delete(categoryName)
+  } else {
+    set.add(categoryName)
+  }
+}
+
+// 判断是否展开
+function isExpanded(categoryName: string): boolean {
+  return expandedCategories.value.has(categoryName)
+}
 
 const processedProjects = projects.map((project) => {
   const githubInfo = extractGithubLink(project.url)
