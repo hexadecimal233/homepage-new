@@ -275,7 +275,7 @@ export const links: CategoryLink[] = [
 ]
 
 export const friendLinks: FriendLink[] = [
-  // 开往 Travellings
+  // 开往 Travellings 应该被置顶
   {
     name: "Travellings",
     url: "https://www.travellings.cn/go.html",
@@ -300,6 +300,20 @@ export const friendLinks: FriendLink[] = [
     desc: "Life's short, why does it take so long?",
     image: "https://ooo.0x0.ooo/2024/07/29/ORlrtq.png",
   },
+  {
+    name: "桃子的空间w",
+    url: "https://www.taoziyooo.top/",
+    desc: "这里是桃子🍑！希望你能喜欢我！",
+    image:
+      "https://www.notion.so/image/attachment%3A01afe8da-20a6-457e-83fd-07b7983dc851%3A1000004871.png?table=collection&id=21c20854-00dd-8121-8719-000b568dc2c6&t=21c20854-00dd-8121-8719-000b568dc2c6",
+  },
+  {
+    name: "天翔TNXGの空间站",
+    url: "https://tnxg.top",
+    desc: "明日尚未到来，希望凝于心上",
+    image: "https://api-space.tnxg.top/avatar?s=qq",
+  },
+
   // {
   //   name: "Wanna submit yours?",
   //   url: "#",

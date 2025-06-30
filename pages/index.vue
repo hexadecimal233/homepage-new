@@ -143,13 +143,13 @@
 
         <p class="text-lg">
           Love my works? Consider donating to support me on
-          <a href="https://ko-fi.com/hexzii" class="text-red-400">
+          <a href="https://ko-fi.com/hexzii" class="font-bold text-red-400">
             <Icon name="simple-icons:kofi" />
             Ko-Fi
           </a>
           or
           <!-- 到时候不能再摆了要多做点项目去宣传！！ -->
-          <a href="https://afdian.com/a/hexzii" class="text-blue-300">
+          <a href="https://afdian.com/a/hexzii" class="font-bold text-blue-300">
             <Icon name="simple-icons:afdian" />
             Afdian (CN)
           </a>
@@ -182,7 +182,7 @@
             <p class="text-sm text-gray-400">{{ category.desc }}</p>
           </div>
 
-          <transition name="slide">
+          <Transition name="slide">
             <div v-show="isExpanded(category.name)" class="mt-2 space-y-2 pl-2">
               <div v-for="link in category.links" :key="link.name">
                 <a
@@ -200,7 +200,7 @@
                 </a>
               </div>
             </div>
-          </transition>
+          </Transition>
         </div>
       </div>
 
@@ -251,13 +251,15 @@
         <div class="sidebar-card">
           <div class="flex items-center gap-2">
             <Icon name="mdi:link" class="text-2xl text-pink-300" />
-            <p class="lilita-one-regular text-xl">Friend Links</p>
+            <p class="lilita-one-regular text-xl">Friends</p>
           </div>
-          <div class="mt-2 space-y-2">
-            <div v-for="link in friendLinks">
+
+          <div :key="currentPage" class="mt-2 space-y-2">
+            <div v-for="(link, index) in visibleLinks" :key="index">
               <a
                 :href="link.url"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="flex items-center gap-2 rounded-lg bg-black/20 p-2 transition-all hover:bg-black/40">
                 <div
                   class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-500/20">
@@ -278,6 +280,22 @@
                 </div>
               </a>
             </div>
+          </div>
+
+          <!-- Pagination Controls -->
+          <div v-if="totalPages > 1" class="pagination-controls">
+            <button
+              @click="prevPage"
+              :disabled="currentPage === 1"
+              class="pagination-button">
+              <Icon name="mdi:arrow-left" />
+            </button>
+            <button
+              @click="nextPage"
+              :disabled="currentPage === totalPages"
+              class="pagination-button">
+              <Icon name="mdi:arrow-right" />
+            </button>
           </div>
         </div>
 
@@ -342,7 +360,7 @@
 }
 
 .sidebar {
-  @apply my-4 border-gray-700 p-4 lg:border-l-2;
+  @apply my-4 overflow-hidden border-gray-700 p-4 lg:border-l-2;
 }
 
 .sidebar-card {
@@ -398,8 +416,16 @@
 .slide-enter-from,
 .slide-leave-to {
   opacity: 0;
-  transform: translateY(-10px);
+  transform: translateX(-10px);
   max-height: 0;
+}
+/* 分页控件样式 */
+.pagination-controls {
+  @apply mt-4 flex items-center justify-center gap-4;
+}
+
+.pagination-button {
+  @apply rounded bg-pink-500/20 px-3 py-1 hover:bg-pink-500/30 disabled:cursor-not-allowed disabled:opacity-50;
 }
 </style>
 
@@ -415,7 +441,7 @@ import {
 // 响应式状态：记录哪些分类是展开的
 const expandedCategories = ref<Set<string>>(
   //new Set(links.map((cat) => cat.name)),
-  new Set(["Contact"]),
+  new Set(),
 )
 
 // 切换分类展开状态
@@ -431,6 +457,25 @@ function toggleCategory(categoryName: string) {
 // 判断是否展开
 function isExpanded(categoryName: string): boolean {
   return expandedCategories.value.has(categoryName)
+}
+
+// 分页相关逻辑
+const currentPage = ref(1)
+const itemsPerPage = 5
+
+const totalPages = computed(() => Math.ceil(friendLinks.length / itemsPerPage))
+
+const visibleLinks = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage
+  return friendLinks.slice(start, start + itemsPerPage)
+})
+
+function nextPage() {
+  if (currentPage.value < totalPages.value) currentPage.value++
+}
+
+function prevPage() {
+  if (currentPage.value > 1) currentPage.value--
 }
 
 const processedProjects = projects.map((project) => {
