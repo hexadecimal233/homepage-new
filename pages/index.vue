@@ -6,7 +6,9 @@
         <div class="flex">
           <img
             src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
-            class="h-32 w-32 rounded-xl border-4 shadow-lg" />
+            class="h-32 w-32 rounded-xl border-4 shadow-lg"
+            alt="Hexzii"
+            sizes="sm:128px md:256px" />
           <div class="mt-2 ml-4">
             <!-- TODO: random splashes
             <div
@@ -98,20 +100,13 @@
             <p class="text-md text-gray-400">CTL-472</p>
           </div>
           <div class="card-item">
-            <img src="/assets/img/arturia.png" class="h-12" />
+            <img src="/assets/img/arturia.png" class="h-12" alt="Arturia" />
             <p>Arturia</p>
             <p class="text-md text-gray-400">Minilab 3</p>
           </div>
         </div>
 
         <p class="section lilita-one-regular">Projects</p>
-
-        <!--- 敬请期待占位
-      <div class="card-item">
-        <Icon name="mdi:directions-run" class="text-5xl" />
-        <p class="text-md">Stay Tuned...</p>
-        <p class="text-sm text-gray-400">Under Construction</p>
-      </div>-->
 
         <div class="projects">
           <div
@@ -122,12 +117,14 @@
               <NuxtImg
                 :src="`https://github.com/${project.gh.user}.png`"
                 class="mr-2 h-6 w-6 rounded-md"
-                loading="lazy" />
+                loading="lazy"
+                :alt="project.gh.repo" />
               <a
                 class="flex items-baseline gap-2 font-bold text-pink-300"
                 :href="project.url"
                 target="_blank">
                 <p>{{ project.gh.user }}/{{ project.gh.repo }}</p>
+                <!-- TODO: Better archived-->
                 <div
                   v-show="project.archived"
                   class="flex max-h-lh items-center rounded-2xl border-2 border-gray-500 px-1 py-0.5 text-sm text-gray-400">
@@ -158,9 +155,7 @@
           <br />
           —— Or you can check out my store for free drops and more stuff!
           (actually there's nothing here yet🫣)
-          <!--
-        <QR name="支付宝" image="/assets/img/alipay.png" color="#1678ff"></QR>
-        <QR name="微信" image="/assets/img/wechat.png" color="#07c160"></QR>    
+          <!-- 
         TODO: PayPal / etc.
         --></p>
 
@@ -194,7 +189,8 @@
                     :src="link.image"
                     v-if="link.image"
                     class="h-[0.7lh]"
-                    loading="lazy" />
+                    loading="lazy"
+                    :alt="link.name" />
                   <p>{{ link.name }}</p>
                   <p class="text-gray-400">{{ link.desc }}</p>
                 </a>
@@ -254,8 +250,8 @@
             <p class="lilita-one-regular text-xl">Friends</p>
           </div>
 
-          <div :key="currentPage" class="mt-2 space-y-2">
-            <div v-for="(link, index) in visibleLinks" :key="index">
+          <div class="mt-2 h-full space-y-2">
+            <div v-for="link in visibleLinks" :key="link.url">
               <a
                 :href="link.url"
                 target="_blank"
@@ -268,6 +264,7 @@
                     :src="link.image"
                     v-if="link.image"
                     loading="lazy"
+                    :alt="link.name"
                     @error="link.image = undefined" />
                   <Icon v-else name="mdi:home" class="text-2xl text-pink-300" />
                 </div>
@@ -287,12 +284,14 @@
             <button
               @click="prevPage"
               :disabled="currentPage === 1"
+              title="Previous Page"
               class="pagination-button">
               <Icon name="mdi:arrow-left" />
             </button>
             <button
               @click="nextPage"
               :disabled="currentPage === totalPages"
+              title="Next Page"
               class="pagination-button">
               <Icon name="mdi:arrow-right" />
             </button>
@@ -317,9 +316,9 @@
               v-model="nglMessage"
               placeholder="Your message..." />
             <button
-              class="lilita-one-regular flex flex-col items-center justify-center rounded-2xl bg-pink-400 text-xl"
+              class="lilita-one-regular flex flex-col items-center justify-center rounded-2xl bg-pink-500/20 text-xl"
               @click="sendNGLMessage">
-              <p>Send!</p>
+              Send!
             </button>
           </div>
         </div>

@@ -9,6 +9,9 @@ export default defineNuxtConfig({
   modules: ["@nuxt/icon", "@nuxt/image", "@nuxt/ui"],
   app: {
     head: {
+      htmlAttrs: {
+        lang: "en-US"
+      },
       charset: "utf-8",
       title: "Hexzii ｡+..｡ﾟ☆",
       meta: [
@@ -29,7 +32,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Lilita+One&display=swapp",
+          href: "https://fonts.googleapis.com/css2?family=Lilita+One&display=swap",
         },
       ],
     },
