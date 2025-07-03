@@ -10,12 +10,6 @@
             alt="Hexzii"
             sizes="sm:128px md:256px" />
           <div class="mt-2 ml-4">
-            <!-- TODO: random splashes
-            <div
-              class="minecraft-splash absolute top-4 right-4 flex -rotate-6 text-2xl font-bold">
-              <p class="whitespace-nowrap">🤔</p>
-            </div>
-            -->
             <div class="relative flex flex-wrap items-end space-x-1 text-4xl">
               <p class="lilita-one-regular text-pink-300">Hexzii</p>
 
@@ -115,7 +109,7 @@
             :class="project.archived ? 'archived' : ''">
             <div class="flex text-lg">
               <NuxtImg
-                :src="`https://github.com/${project.gh.user}.png`"
+                :src="`https://github.com/${project.gh.user}.png?size=64`"
                 class="mr-2 h-6 w-6 rounded-md"
                 loading="lazy"
                 :alt="project.gh.repo" />
@@ -304,9 +298,7 @@
             <h3 class="lilita-one-regular text-xl">Anonymous DMs</h3>
           </div>
           <div class="flex flex-col gap-2">
-            <p class="text-amber-400">
-              Send me Anonymous DMs!! (friend link requests welcome!!)
-            </p>
+            <p class="text-amber-400">Send me Anonymous DMs.</p>
 
             <p v-show="nglError !== ''" class="text-green-500">
               {{ nglError }}
@@ -364,46 +356,6 @@
 
 .sidebar-card {
   @apply mb-4 rounded-xl bg-black/30 p-4;
-}
-
-.minecraft-splash {
-  color: #fefe00;
-  animation: splash 0.65s infinite ease-in-out;
-}
-
-@keyframes splash {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.15);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-.rainbow-flasher {
-  animation: rainbow-flash 1s infinite;
-  background-clip: text;
-}
-
-@keyframes rainbow-flash {
-  from {
-    color: #6666ff;
-  }
-  10% {
-    color: #0099ff;
-  }
-  50% {
-    color: #00ff00;
-  }
-  75% {
-    color: #ff3399;
-  }
-  100% {
-    color: #6666ff;
-  }
 }
 
 .slide-enter-active,
