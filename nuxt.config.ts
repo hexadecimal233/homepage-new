@@ -7,6 +7,11 @@ export default defineNuxtConfig({
   css: ["~/assets/css/main.css"],
   vite: { plugins: [tailwindcss()] },
   modules: ["@nuxt/icon", "@nuxt/image", "@nuxt/ui"],
+  runtimeConfig: {
+    public: {
+      buildTime: process.env.BUILD_TIME || new Date().toISOString()
+    }
+  },
   app: {
     head: {
       htmlAttrs: {
