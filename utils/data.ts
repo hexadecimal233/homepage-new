@@ -313,7 +313,12 @@ export const friendLinks: FriendLink[] = [
     desc: "明日尚未到来，希望凝于心上",
     image: "https://api-space.tnxg.top/avatar?s=qq",
   },
-
+  {
+    name: "Snowykami OS",
+    url: "https://sfkm.me/",
+    desc: "Snowykami的主页",
+    image: "https://q.qlogo.cn/g?b=qq&nk=2751454815&s=640",
+  },
   // {
   //   name: "Wanna submit yours?",
   //   url: "#",
