@@ -156,6 +156,12 @@ export const links: CategoryLink[] = [
         url: "https://space.bilibili.com/174927495",
       },
       {
+        name: "Bilibili (Stream)",
+        desc: "盒沐子",
+        icon: "simple-icons:bilibili",
+        url: "https://space.bilibili.com/174927495",
+      },
+      {
         name: "SoundCloud",
         desc: "Hexzii",
         icon: "simple-icons:soundcloud",
