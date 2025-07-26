@@ -345,9 +345,11 @@
 .project-item {
   @apply flex flex-col space-y-1 rounded-lg bg-black/30 px-2 py-4 text-xl shadow-lg transition-all hover:bg-black/50;
 
+  /*
   &.archived {
     @apply brightness-75;
   }
+  */
 }
 
 .sidebar {
@@ -449,6 +451,7 @@ const age = Math.floor(
 const nglMessage = ref("")
 const nglError = ref("")
 
+// TODO: 部署自己的匿名消息服务
 // 因为CORS所以就获取不到返回结果了
 async function sendNGLMessage() {
   nglError.value = ""

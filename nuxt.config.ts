@@ -9,13 +9,13 @@ export default defineNuxtConfig({
   modules: ["@nuxt/icon", "@nuxt/image", "@nuxt/ui"],
   runtimeConfig: {
     public: {
-      buildTime: process.env.BUILD_TIME || new Date().toISOString()
-    }
+      buildTime: process.env.BUILD_TIME || new Date().toISOString(),
+    },
   },
   app: {
     head: {
       htmlAttrs: {
-        lang: "en-US"
+        lang: "en-US",
       },
       charset: "utf-8",
       title: "Hexzii ｡+..｡ﾟ☆",
@@ -27,6 +27,28 @@ export default defineNuxtConfig({
         {
           name: "keywords",
           content: "Homepage, Profile, hexadecimal233, Hexzii⭐, 盒沐子",
+        },
+        // Open Graph Meta Tags
+        {
+          property: "og:title",
+          content: "Hexzii ｡+..｡ﾟ☆",
+        },
+        {
+          property: "og:description",
+          content: "Hexzii's personal profile website.",
+        },
+        {
+          property: "og:image",
+          content:
+            "https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567",
+        },
+        {
+          property: "og:url",
+          content: "https://hexzii.com/",
+        },
+        {
+          property: "og:type",
+          content: "website",
         },
       ],
       link: [
