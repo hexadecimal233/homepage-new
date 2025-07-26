@@ -179,6 +179,14 @@ export const links: CategoryLink[] = [
         icon: "simple-icons:pixiv",
         url: "https://www.pixiv.net/users/64711023",
       },
+      /*
+      {
+        name: "Itch.io",
+        desc: "Hexzii",
+        icon: "simple-icons:itchio",
+        url: "https://hexzii.itch.io/",
+      },
+      */
     ],
   },
   {
@@ -209,7 +217,20 @@ export const links: CategoryLink[] = [
         icon: "simple-icons:instagram",
         url: "https://instagram.com/hexzii_",
       },
-      // TODO: 要不要试试去中心化（长毛象）
+      {
+        name: "Tumblr",
+        desc: "HEXZII⭐",
+        icon: "simple-icons:tumblr",
+        url: "https://www.tumblr.com/hexzii",
+      },
+      /*
+      {
+        name: "Mastodon", // or misskey in instances
+        desc: "Hexzii⭐",
+        icon: "simple-icons:mastodon",
+        url: "tba",
+      },
+      */
     ],
   },
   {
@@ -240,6 +261,21 @@ export const links: CategoryLink[] = [
         icon: "simple-icons:codeberg",
         url: "https://codeberg.org/hexzii",
       },
+      /*
+      these are placeholders
+      {
+        name: "Figma",
+        desc: "Hexzii⭐",
+        icon: "simple-icons:figma",
+        url: "https://www.figma.com/@hexzii",
+      },
+      {
+        name: "DeviantArt",
+        desc: "Hexzii⭐",
+        icon: "simple-icons:deviantart",
+        url: "https://www.deviantart.com/hexzii",
+      },
+      */
     ],
   },
   {
