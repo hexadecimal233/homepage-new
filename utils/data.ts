@@ -32,6 +32,12 @@ interface CategoryLink {
   links: Link[]
 }
 
+interface NavBarItem {
+  name: string
+  url: string
+  icon: string
+}
+
 export function extractGithubLink(url: string) {
   const match = url.match(/github\.com\/(.+)\/(.+)/)
   return match
@@ -256,13 +262,25 @@ export const links: CategoryLink[] = [
         url: "https://gitee.com/LLKawi",
       },
       {
+        name: "HuggingFace",
+        desc: "Soda5601",
+        icon: "simple-icons:huggingface",
+        url: "https://huggingface.co/Soda5601",
+      },
+      {
+        name: "StackOverflow",
+        desc: "hexadecimal233",
+        icon: "simple-icons:stackoverflow",
+        url: "https://stackoverflow.com/users/22309886/hexadecimal233",
+      },
+      /*
+      {
         name: "Codeberg",
         desc: "Hexzii",
         icon: "simple-icons:codeberg",
         url: "https://codeberg.org/hexzii",
       },
-      /*
-      these are placeholders
+      // these are placeholders
       {
         name: "Figma",
         desc: "Hexzii⭐",
@@ -383,5 +401,23 @@ export const sites: SiteLink[] = [
     name: "Uptime Monitor",
     url: "https://stats.uptimerobot.com/7rGZ5HE96Q",
     icon: "mdi:clock-fast",
+  },
+]
+
+export const navBarItems: NavBarItem[] = [
+  {
+    name: "Ech0",
+    url: "https://ech0.nichijou.moe",
+    icon: "mdi:note-text",
+  },
+  {
+    name: "Alist",
+    url: "https://alist.nichijou.moe",
+    icon: "mdi:folder-network",
+  },
+  {
+    name: "Gitea",
+    url: "https://git.nichijou.moe",
+    icon: "mdi:git",
   },
 ]
