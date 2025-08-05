@@ -7,29 +7,20 @@
 
   <div class="flex min-h-screen flex-col *:px-4 *:py-4">
     <!-- 导航栏 -->
-    <TransitionRoot
-      :show="isDesktopNavBarVisible"
-      enter="transform transition duration-300"
-      enter-from="translate-y-[-100%] opacity-30 scale-95"
-      enter-to="translate-y-0 opacity-100 scale-100"
-      leave="transform transition duration-300"
-      leave-from="translate-y-0 opacity-100 scale-100"
-      leave-to="translate-y-[-100%] opacity-30 scale-95">
-      <div class="flex justify-center">
-        <div
-          class="flex gap-2 rounded-2xl bg-white/10 p-2 text-white backdrop-blur-md">
-          <a
-            v-for="item in navBarItems"
-            :key="item.url"
-            :href="item.url"
-            target="_blank"
-            class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
-            <Icon :name="item.icon" class="text-xl" />
-            <span class="block text-sm">{{ item.name }}</span>
-          </a>
-        </div>
+    <div class="flex justify-center" :show="isDesktopNavBarVisible">
+      <div
+        class="flex gap-2 rounded-2xl bg-white/10 p-2 text-white backdrop-blur-md">
+        <a
+          v-for="item in navBarItems"
+          :key="item.url"
+          :href="item.url"
+          target="_blank"
+          class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
+          <Icon :name="item.icon" class="text-xl" />
+          <span class="block text-sm">{{ item.name }}</span>
+        </a>
       </div>
-    </TransitionRoot>
+    </div>
     <div class="flex-1">
       <slot />
     </div>
@@ -47,21 +38,6 @@ const runtimeConfig = useRuntimeConfig()
 
 // 导航栏显示状态
 const isDesktopNavBarVisible = ref(true)
-
-// 简单的滚动处理
-let lastScrollY = 0
-if (process.client) {
-  window.addEventListener(
-    "scroll",
-    () => {
-      const currentScrollY = window.scrollY
-      isDesktopNavBarVisible.value =
-        currentScrollY <= lastScrollY || currentScrollY < 100
-      lastScrollY = currentScrollY
-    },
-    { passive: true },
-  )
-}
 </script>
 
 <style scoped>

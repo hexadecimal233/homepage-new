@@ -50,6 +50,19 @@ export default defineNuxtConfig({
           property: "og:type",
           content: "website",
         },
+        {
+          property: "twitter:card",
+          content: "summary_large_image",
+        },
+        {
+          property: "twitter:title",
+          content: "Hexzii ｡+..｡ﾟ☆",
+        },
+        {
+          property: "twitter:description",
+          content: "Hexzii's personal profile website.",
+        },
+        // End Open Graph Meta Tags
       ],
       link: [
         {
