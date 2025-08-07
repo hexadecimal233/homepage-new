@@ -9,14 +9,26 @@
     <!-- 导航栏 -->
     <div class="flex justify-center" :show="isDesktopNavBarVisible">
       <div
-        class="flex gap-2 rounded-2xl bg-white/10 p-2 text-white backdrop-blur-md">
+        class="flex gap-2 rounded-2xl bg-white/10 p-2 text-2xl text-white backdrop-blur-md">
+        <NuxtLink
+          to="/"
+          class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
+          <Icon name="mdi-home" />
+          <span class="block text-sm">Home</span>
+        </NuxtLink>
+        <NuxtLink
+          to="/c"
+          class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
+          <Icon name="mdi-account" />
+          <span class="block text-sm">Contact</span>
+        </NuxtLink>
         <a
           v-for="item in navBarItems"
           :key="item.url"
           :href="item.url"
           target="_blank"
           class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
-          <Icon :name="item.icon" class="text-xl" />
+          <Icon :name="item.icon" />
           <span class="block text-sm">{{ item.name }}</span>
         </a>
       </div>
@@ -32,8 +44,6 @@
 </template>
 
 <script lang="ts" setup>
-import { TransitionRoot } from "@headlessui/vue"
-
 const runtimeConfig = useRuntimeConfig()
 
 // 导航栏显示状态

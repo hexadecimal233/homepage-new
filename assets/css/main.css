@@ -15,6 +15,10 @@ a {
   }
 }
 
+.divider {
+  @apply border-t-5 border-dashed border-gray-200;
+}
+
 /* Some interesting animations!!!! */
 
 .minecraft-splash {

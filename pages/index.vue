@@ -171,15 +171,9 @@
           <p class="text-sm text-gray-400">{{ category.desc }}</p>
         </div>
 
-        <TransitionRoot
-          :show="isExpanded(category.name)"
-          class="mt-2 space-y-2 overflow-hidden pl-2"
-          enter="transition-all duration-300 ease-in-out"
-          enter-from="opacity-0 -translate-x-4 max-h-0"
-          enter-to="opacity-100 translate-x-0 max-h-[200px]"
-          leave="transition-all duration-300 ease-in-out"
-          leave-from="opacity-100 translate-x-0 max-h-[200px]"
-          leave-to="opacity-0 -translate-x-4 max-h-0">
+        <div
+          v-show="isExpanded(category.name)"
+          class="mt-2 space-y-2 overflow-hidden pl-2">
           <div v-for="link in category.links" :key="link.name">
             <a
               :href="link.url"
@@ -196,7 +190,7 @@
               <p class="text-gray-400">{{ link.desc }}</p>
             </a>
           </div>
-        </TransitionRoot>
+        </div>
       </div>
     </div>
 
@@ -309,10 +303,6 @@
 <style scoped>
 @import "tailwindcss";
 
-.divider {
-  @apply border-t-5 border-dashed border-gray-200;
-}
-
 .section {
   @apply border-l-6 border-l-pink-400 px-4 text-3xl;
 }
@@ -331,12 +321,6 @@
 
 .project-item {
   @apply flex flex-col space-y-1 rounded-lg bg-black/30 px-2 py-4 text-xl shadow-lg transition-all hover:bg-black/50;
-
-  /*
-  &.archived {
-    @apply brightness-75;
-  }
-  */
 }
 
 .sidebar {
@@ -356,7 +340,6 @@ import {
   friendLinks,
   sites,
 } from "~/utils/data"
-import { TransitionRoot } from "@headlessui/vue"
 
 // 响应式状态：记录哪些分类是展开的
 const expandedCategories = ref<Set<string>>(
