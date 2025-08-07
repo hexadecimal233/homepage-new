@@ -8,11 +8,7 @@
 }
 
 a {
-  text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
+  @apply border-b-2 border-transparent transition-all duration-300 hover:border-current;
 }
 
 .divider {

@@ -7,20 +7,20 @@
 
   <div class="flex min-h-screen flex-col *:px-4 *:py-4">
     <!-- 导航栏 -->
-    <div class="flex justify-center" :show="isDesktopNavBarVisible">
+    <div class="flex justify-center">
       <div
-        class="flex gap-2 rounded-2xl bg-white/10 p-2 text-2xl text-white backdrop-blur-md">
+        class="flex gap-2 rounded-2xl bg-white/10 p-2 text-xl font-bold text-white backdrop-blur-md">
         <NuxtLink
           to="/"
           class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
           <Icon name="mdi-home" />
-          <span class="block text-sm">Home</span>
+          <span class="block">Home</span>
         </NuxtLink>
         <NuxtLink
           to="/c"
           class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
           <Icon name="mdi-account" />
-          <span class="block text-sm">Contact</span>
+          <span class="block">Contact</span>
         </NuxtLink>
         <a
           v-for="item in navBarItems"
@@ -29,25 +29,31 @@
           target="_blank"
           class="flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
           <Icon :name="item.icon" />
-          <span class="block text-sm">{{ item.name }}</span>
+          <span class="block">{{ item.name }}</span>
         </a>
       </div>
     </div>
     <div class="flex-1">
       <slot />
     </div>
-    <footer class="bg-slate-800 text-center text-sm text-gray-400">
-      This site was updated on
-      {{ new Date(runtimeConfig.public.buildTime).toLocaleTimeString() }}
-    </footer>
+    <div class="text-md flex justify-center bg-slate-800 text-gray-400">
+      <p>
+        This site was updated on
+        {{ new Date(runtimeConfig.public.buildTime).toLocaleTimeString() }}
+      </p>
+      <a
+        href="https://github.com/hexadecimal233/homepage-new"
+        target="_blank"
+        class="ml-2 flex items-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 hover:text-white/90 md:px-4">
+        <Icon name="simple-icons:github" class="text-2xl" />
+        Open me at Github
+      </a>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 const runtimeConfig = useRuntimeConfig()
-
-// 导航栏显示状态
-const isDesktopNavBarVisible = ref(true)
 </script>
 
 <style scoped>
