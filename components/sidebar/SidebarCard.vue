@@ -2,7 +2,9 @@
   <div class="sidebar-card">
     <div class="flex items-center gap-2">
       <Icon v-if="icon" :name="icon" class="text-2xl text-pink-300" />
-      <h3 class="lilita-one-regular text-xl"><slot name="title"></slot></h3>
+      <p class="lilita-one-regular text-xl">
+        {{ title }}
+      </p>
     </div>
     <div class="mt-2">
       <slot></slot>
@@ -12,6 +14,7 @@
 
 <script lang="ts" setup>
 defineProps<{
+  title: string
   icon?: string
 }>()
 </script>

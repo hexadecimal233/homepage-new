@@ -7,19 +7,10 @@
       <hr class="divider" />
 
       <p class="section lilita-one-regular">About me</p>
-      <p class="text-lg">
-        I'm a
-        <strong>passionate developer</strong>
-        and
-        <strong>music producer</strong>
-        who loves exploring new technologies and creative tools, currently
-        living in the city of Shanghai, China.
-        <br />
-        <br />
-        Eagerly looking for some opportunities to
-        <strong>collaborate</strong>
-        with other devs / producers and create something fire!!!!
-      </p>
+      <p class="text-lg">yo</p>
+
+      <p class="section lilita-one-regular">Links</p>
+      <LinksSection />
 
       <p class="section lilita-one-regular">Languages</p>
       <CardGroup
@@ -62,9 +53,6 @@
 
       <p class="section lilita-one-regular">Store</p>
       <DonationSection />
-
-      <p class="section lilita-one-regular">Links</p>
-      <LinksSection />
     </div>
 
     <Sidebar />
@@ -72,17 +60,16 @@
 </template>
 
 <script lang="ts" setup>
-import ProfileCard from "~/components/ProfileCard.vue"
-import CardGroup from "~/components/CardGroup.vue"
-import ProjectList from "~/components/ProjectList.vue"
+import ProfileCard from "~/components/home/ProfileCard.vue"
+import CardGroup from "~/components/home/CardGroup.vue"
+import ProjectList from "~/components/home/ProjectList.vue"
 import Sidebar from "~/components/sidebar/Sidebar.vue"
-import LinksSection from "~/components/LinksSection.vue"
-import DonationSection from "~/components/DonationSection.vue"
+import LinksSection from "~/components/home/LinksSection.vue"
+import DonationSection from "~/components/home/DonationSection.vue"
 </script>
 
 <style scoped>
 @import "tailwindcss";
-@reference "~/assets/css/main.css";
 
 .section {
   @apply border-l-6 border-l-pink-400 px-4 text-3xl;
