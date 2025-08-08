@@ -8,7 +8,7 @@
           <Icon
             name="mdi:chevron-down"
             :class="{ 'rotate-180': isExpanded(category.name) }" />
-          <h3 class="text-xl">{{ category.name }}</h3>
+          <p class="text-xl">{{ category.name }}</p>
         </div>
         <p class="text-sm text-gray-400">{{ category.desc }}</p>
       </div>

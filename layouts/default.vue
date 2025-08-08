@@ -6,7 +6,7 @@
         class="flex gap-2 rounded-2xl bg-white/10 p-2 text-xl font-bold text-white backdrop-blur-md">
         <NuxtLink
           to="/"
-          class="flex min-w-0 items-center justify-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 sm:min-w-32">
+          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
           <Icon name="mdi-home" />
           <span class="hidden sm:inline">Home</span>
         </NuxtLink>
@@ -15,7 +15,7 @@
           :key="item.url"
           :href="item.url"
           target="_blank"
-          class="flex min-w-0 items-center justify-center gap-2 rounded-lg px-3 py-2 transition-all hover:bg-white/20 sm:min-w-32">
+          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
           <Icon :name="item.icon" />
           <span class="hidden sm:inline">{{ item.name }}</span>
         </a>
@@ -30,7 +30,7 @@
     <!-- FOOTER -->
     <div class="flex justify-center py-8">
       <div
-        class="text-md flex flex-col items-center justify-center rounded-2xl bg-white/10 p-2 text-gray-400 backdrop-blur-md">
+        class="text-md flex flex-col items-center justify-center rounded-2xl bg-white/10 p-4 text-gray-400 backdrop-blur-md">
         <p>
           This site was updated on
           {{ new Date(runtimeConfig.public.buildTime).toLocaleTimeString() }}
@@ -50,7 +50,6 @@
 
 <script lang="ts" setup>
 const runtimeConfig = useRuntimeConfig()
-// TODO: Add a better background
 </script>
 
 <style scoped>

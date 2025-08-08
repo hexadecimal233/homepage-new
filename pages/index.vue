@@ -75,10 +75,6 @@ import DonationSection from "~/components/home/DonationSection.vue"
   @apply border-l-6 border-l-pink-400 px-4 text-3xl;
 }
 
-.divider {
-  @apply my-4 border-t border-gray-700;
-}
-
 .sidebar {
   @apply my-4 overflow-hidden border-gray-700 p-4 lg:border-l-2;
 }

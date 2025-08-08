@@ -1,6 +1,12 @@
 /* Universal Styles */
 @import "tailwindcss";
 
+@theme {
+  --default-transition-duration: 250ms;
+
+  /* TODO: Add accent corlor */
+}
+
 .lilita-one-regular {
   font-family: "Lilita One", sans-serif;
   font-weight: 400;
@@ -9,11 +15,11 @@
 
 .link {
   /* TODO: styles */
-  @apply border-b-2 border-transparent transition-all duration-300 hover:border-current;
+  @apply border-b-2 border-transparent transition-all hover:border-current;
 }
 
 .divider {
-  @apply border-t-5 border-dashed border-gray-200;
+  @apply my-4 border-t-5 border-dashed border-gray-700;
 }
 
 /* Some interesting animations!!!! */

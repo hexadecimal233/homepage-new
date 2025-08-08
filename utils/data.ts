@@ -7,9 +7,14 @@ interface Link {
 }
 
 interface Project {
-  url: string
-  desc: string
-  archived: boolean
+  id: number
+  title: string
+  description: string
+  image: string
+  tags: string[]
+  github: string
+  website: string
+  status: string
 }
 
 interface FriendLink {
@@ -47,44 +52,84 @@ export function extractGithubLink(url: string) {
 
 export const projects: Project[] = [
   {
-    url: "https://github.com/hexadecimal233/bili-signature",
-    desc: "b站自动改签名~",
-    archived: false,
+    id: 1,
+    title: "B站自动改签名",
+    description: "b站自动改签名~",
+    image: "#",
+    tags: ["Python", "Bilibili API"],
+    github: "https://github.com/hexadecimal233/bili-signature",
+    website: "#",
+    status: "",
   },
   {
-    url: "https://github.com/hexadecimal233/chongchong-free",
-    desc: "虫虫钢琴乐谱下载工具",
-    archived: false,
+    id: 2,
+    title: "虫虫钢琴乐谱下载工具",
+    description: "虫虫钢琴乐谱下载工具",
+    image: "#",
+    tags: ["Python", "Web Scraping"],
+    github: "https://github.com/hexadecimal233/chongchong-free",
+    website: "#",
+    status: "",
   },
   {
-    url: "https://github.com/hexadecimal233/zeitgeist-addon",
-    desc: "Meteor Client的一个插件",
-    archived: true,
+    id: 3,
+    title: "Meteor Client插件",
+    description: "Meteor Client的一个插件",
+    image: "#",
+    tags: ["Java", "Minecraft"],
+    github: "https://github.com/hexadecimal233/zeitgeist-addon",
+    website: "#",
+    status: "Archived",
   },
   {
-    url: "https://github.com/hexadecimal233/Windows-Store-Downloader",
-    desc: "Windows Store appx包下载器",
-    archived: false,
+    id: 4,
+    title: "Windows Store下载器",
+    description: "Windows Store appx包下载器",
+    image: "#",
+    tags: ["C#", "Windows API"],
+    github: "https://github.com/hexadecimal233/Windows-Store-Downloader",
+    website: "#",
+    status: "",
   },
   {
-    url: "https://github.com/LemonClientDevelopment/nsm",
-    desc: "Yes Steve Model 老版模型解密工具",
-    archived: false,
+    id: 5,
+    title: "NSM解密工具",
+    description: "Yes Steve Model 老版模型解密工具",
+    image: "#",
+    tags: ["Java", "Minecraft"],
+    github: "https://github.com/LemonClientDevelopment/nsm",
+    website: "#",
+    status: "",
   },
   {
-    url: "https://github.com/hexadecimal233/midi-visualizer",
-    desc: "模仿一些音mad里的MIDI可视化工具",
-    archived: false,
+    id: 6,
+    title: "MIDI可视化工具",
+    description: "模仿一些音mad里的MIDI可视化工具",
+    image: "#",
+    tags: ["Rust", "SDL2"],
+    github: "https://github.com/hexadecimal233/midi-visualizer",
+    website: "#",
+    status: "",
   },
   {
-    url: "https://github.com/hexadecimal233/esp32c3-singing-stepper",
-    desc: "电机唱歌~",
-    archived: false,
+    id: 7,
+    title: "电机唱歌",
+    description: "电机唱歌~",
+    image: "#",
+    tags: ["C++", "ESP32"],
+    github: "https://github.com/hexadecimal233/esp32c3-singing-stepper",
+    website: "#",
+    status: "",
   },
   {
-    url: "https://github.com/hexadecimal233/mcsm-reg",
-    desc: "MCSM的一个注册WebUI",
-    archived: true,
+    id: 8,
+    title: "MCSM注册WebUI",
+    description: "MCSM的一个注册WebUI",
+    image: "#",
+    tags: ["JavaScript", "Node.js"],
+    github: "https://github.com/hexadecimal233/mcsm-reg",
+    website: "#",
+    status: "Archived",
   },
 ]
 
