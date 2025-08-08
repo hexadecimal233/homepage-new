@@ -28,7 +28,7 @@
 <style scoped></style>
 
 <script lang="ts" setup>
-// TODO: Use alert instead
+// TODO: Use Toast
 const showCopied = ref(false)
 function copyEmail() {
   navigator.clipboard.writeText("contact@onlyra1n.top")

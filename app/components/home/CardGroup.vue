@@ -1,5 +1,5 @@
 <template>
-  <div class="cards lilita-one-regular">
+  <div class="cards theme-font">
     <div v-for="item in items" :key="item.text" class="card-item">
       <Icon v-if="item.icon" :name="item.icon" class="text-3xl" />
       <img v-if="item.image" :src="item.image" class="h-12" :alt="item.text" />

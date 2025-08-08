@@ -1,25 +1,25 @@
 <template>
   <div
     class="mx-auto flex w-full max-w-4xl flex-col rounded-2xl bg-white/10 text-white shadow-lg backdrop-blur-md lg:flex-row">
-    <div class="space-y-2 px-6 py-8 lg:flex-[70%]">
+    <div class="space-y-2 px-6 py-8 lg:max-w-[70%]">
       <ProfileCard />
 
       <hr class="divider" />
 
-      <p class="section lilita-one-regular">About me</p>
+      <p class="section">About me</p>
       <p class="text-lg">yo</p>
 
-      <p class="section lilita-one-regular">Links</p>
+      <p class="section">Links</p>
       <LinksSection />
 
-      <p class="section lilita-one-regular">Languages</p>
+      <p class="section">Languages</p>
       <CardGroup
         :items="[
           { icon: 'twemoji:flag-united-states', text: 'English' },
           { icon: 'twemoji:flag-china', text: '中文' },
         ]" />
 
-      <p class="section lilita-one-regular">Operating System</p>
+      <p class="section">Operating System</p>
       <CardGroup
         :items="[
           {
@@ -31,7 +31,7 @@
           { icon: 'logos:manjaro', text: 'Linux', subtext: 'Manjaro' },
         ]" />
 
-      <p class="section lilita-one-regular">Creativity Gear</p>
+      <p class="section">Creativity Gear</p>
       <CardGroup
         :items="[
           {
@@ -48,10 +48,10 @@
           },
         ]" />
 
-      <p class="section lilita-one-regular">Projects</p>
+      <p class="section">Projects</p>
       <ProjectList />
 
-      <p class="section lilita-one-regular">Store</p>
+      <p class="section">Store</p>
       <DonationSection />
     </div>
 
@@ -70,9 +70,10 @@ import DonationSection from "~/components/home/DonationSection.vue"
 
 <style scoped>
 @import "tailwindcss";
+@import "~/assets/css/main.css";
 
 .section {
-  @apply border-l-6 border-l-pink-400 px-4 text-3xl;
+  @apply theme-font my-6 border-l-6 border-l-pink-400 px-4 text-3xl;
 }
 
 .sidebar {

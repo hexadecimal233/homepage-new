@@ -7,7 +7,7 @@
       <div class="image-container">
         <!-- TODO: Image Placeholder -->
         <NuxtImg
-          :src="project.image === '#' ? '' : project.image"
+          :src="project.image === '' ? '' : project.image"
           class="h-full w-full object-cover"
           loading="lazy"
           :alt="project.title" />
@@ -20,7 +20,12 @@
               class="mr-2 h-6 w-6 rounded-md"
               loading="lazy"
               :alt="project.gh.repo" />
-            <p class="text-xl font-bold text-pink-300">{{ project.title }}</p>
+            <a
+              class="text-xl font-bold text-pink-300"
+              :href="project.website"
+              target="_blank">
+              {{ project.title }}
+            </a>
           </div>
           <div
             v-if="project.status !== ''"
@@ -39,19 +44,11 @@
         </div>
         <div class="mt-4 flex gap-3">
           <a
-            v-if="project.github !== '#'"
+            v-if="project.github !== ''"
             :href="project.github"
             target="_blank"
-            class="text-sm text-pink-400 hover:underline">
+            class="text-sm text-pink-400">
             GitHub
-            <Icon name="mdi:open-in-new" />
-          </a>
-          <a
-            v-if="project.website !== '#'"
-            :href="project.website"
-            target="_blank"
-            class="text-sm text-pink-400 hover:underline">
-            Website
             <Icon name="mdi:open-in-new" />
           </a>
         </div>
@@ -76,14 +73,17 @@ const processedProjects = projects.map((project) => {
 @import "tailwindcss";
 
 .projects {
-  @apply grid grid-cols-1 gap-6 md:grid-cols-2;
+  @apply grid grid-flow-col grid-rows-2 gap-6 overflow-auto;
+  grid-auto-columns: 20rem;
 }
 
 .project-item {
   @apply flex flex-col overflow-hidden rounded-lg border border-transparent bg-black/30 shadow-lg transition-all hover:-translate-y-0.5 hover:border-pink-300 hover:bg-black/50 hover:shadow-xl;
+  /* 添加最小宽度确保项目不会被压缩 */
+  min-width: 20rem;
 }
 
 .image-container {
-  @apply h-40 w-full;
+  @apply h-40 w-full object-cover;
 }
 </style>

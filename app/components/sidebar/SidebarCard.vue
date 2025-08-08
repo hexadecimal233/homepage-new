@@ -2,7 +2,7 @@
   <div class="sidebar-card">
     <div class="flex items-center gap-2">
       <Icon v-if="icon" :name="icon" class="text-2xl text-pink-300" />
-      <p class="lilita-one-regular text-xl">
+      <p class="theme-font text-xl">
         {{ title }}
       </p>
     </div>

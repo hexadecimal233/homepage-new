@@ -1,5 +1,5 @@
 <template>
-  <div class="lilita-one-regular w-full space-y-2">
+  <div class="theme-font w-full space-y-2">
     <div v-for="category in links" :key="category.name" class="w-full">
       <div
         class="flex cursor-pointer items-center justify-between bg-black/20 p-2 hover:bg-black/40"

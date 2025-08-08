@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar lg:flex-[30%]">
+  <div class="sidebar lg:max-w-[30%]">
     <SidebarCard icon="mdi:home" title="My Sites">
       <div class="mt-2 space-y-2">
         <div v-for="link in sites">
@@ -47,60 +47,12 @@
         </div>
       </div>
     </SidebarCard>
-
-    <SidebarCard icon="mdi:message-bulleted" title="Anonymous DMs">
-      <div class="flex flex-col gap-2">
-        <p class="text-amber-400">Send me Anonymous DMs.</p>
-        <p v-show="nglError !== ''" class="text-green-500">{{ nglError }}</p>
-        <textarea
-          class="min-h-[4.5rem] overflow-hidden rounded-xl bg-black/30 p-2 text-sm"
-          v-model="nglMessage"
-          placeholder="Your message..." />
-        <button
-          class="lilita-one-regular flex flex-col items-center justify-center rounded-2xl bg-pink-500/20 text-xl"
-          @click="sendNGLMessage">
-          Send!
-        </button>
-      </div>
-    </SidebarCard>
   </div>
 </template>
 
 <script lang="ts" setup>
 import SidebarCard from "./SidebarCard.vue"
-const nglMessage = ref("")
-
 import { friendLinks, sites } from "~/utils/data"
-const nglError = ref("")
-
-async function sendNGLMessage() {
-  nglError.value = ""
-  const username = "hexadecimal2"
-
-  // @ts-ignore 生成设备id
-  const deviceId = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
-    (
-      c ^
-      (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))
-    ).toString(16),
-  )
-
-  const body = new URLSearchParams({
-    username,
-    question: nglMessage.value,
-    deviceId: deviceId,
-    gameSlug: "",
-    referrer: "",
-  })
-
-  const resp = await fetch("https://ngl.link/api/submit", {
-    method: "POST",
-    body,
-    mode: "no-cors",
-  })
-
-  nglError.value = "Successfully sent!"
-}
 </script>
 
 <style scoped>

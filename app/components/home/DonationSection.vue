@@ -19,7 +19,3 @@
     </p>
   </div>
 </template>
-
-<script lang="ts" setup>
-// 可以添加捐赠相关的逻辑
-</script>

@@ -8,7 +8,7 @@
           to="/"
           class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
           <Icon name="mdi-home" />
-          <span class="hidden sm:inline">Home</span>
+          <span class="">Home</span>
         </NuxtLink>
         <a
           v-for="item in navBarItems"
@@ -17,7 +17,7 @@
           target="_blank"
           class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
           <Icon :name="item.icon" />
-          <span class="hidden sm:inline">{{ item.name }}</span>
+          <span class="">{{ item.name }}</span>
         </a>
       </div>
     </div>
