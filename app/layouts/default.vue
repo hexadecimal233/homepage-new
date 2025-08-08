@@ -3,7 +3,7 @@
     <!-- Nav Bar -->
     <div class="flex justify-center py-8">
       <div
-        class="flex gap-2 rounded-2xl bg-white/10 p-2 text-xl font-bold text-white backdrop-blur-md">
+        class="flex gap-2 rounded-2xl bg-slate-800 p-2 text-xl font-bold text-white">
         <NuxtLink
           to="/"
           class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
@@ -30,7 +30,7 @@
     <!-- FOOTER -->
     <div class="flex justify-center py-8">
       <div
-        class="text-md flex flex-col items-center justify-center rounded-2xl bg-white/10 p-4 text-gray-400 backdrop-blur-md">
+        class="text-md flex flex-col items-center justify-center rounded-2xl bg-slate-800 p-4 text-gray-400">
         <p>
           This site was updated on
           {{ new Date(runtimeConfig.public.buildTime).toLocaleTimeString() }}
@@ -45,11 +45,35 @@
         </div>
       </div>
     </div>
+
+    <!-- To Top Button -->
+    <IconButton
+      @click="scrollToTop"
+      class="fixed right-8 bottom-8 opacity-0 transition-all"
+      :class="showToTop ? 'opacity-100' : ''"
+      icon="mdi:arrow-up" />
   </div>
 </template>
 
 <script lang="ts" setup>
 const runtimeConfig = useRuntimeConfig()
+const showToTop = ref(false)
+
+const onScroll = () => {
+  showToTop.value = window.scrollY > 300
+}
+
+// 滚动到顶部
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+}
+
+onMounted(() => {
+  window.addEventListener("scroll", onScroll)
+})
 </script>
 
 <style scoped>

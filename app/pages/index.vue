@@ -1,25 +1,38 @@
 <template>
   <div
-    class="mx-auto flex w-full max-w-4xl flex-col rounded-2xl bg-white/10 text-white shadow-lg backdrop-blur-md lg:flex-row">
+    class="mx-auto flex w-full max-w-4xl flex-col rounded-2xl bg-slate-800 text-white shadow-2xl lg:flex-row">
+    <!-- 侧边栏三七开 -->
     <div class="space-y-2 px-6 py-8 lg:max-w-[70%]">
       <ProfileCard />
 
       <hr class="divider" />
 
-      <p class="section">About me</p>
+      <div class="section">
+        <Icon name="mdi:account" class="mr-2 text-4xl" />
+        About me
+      </div>
       <p class="text-lg">yo</p>
 
-      <p class="section">Links</p>
+      <div class="section">
+        <Icon name="mdi:link-variant" class="mr-2 text-4xl" />
+        Links
+      </div>
       <LinksSection />
 
-      <p class="section">Languages</p>
+      <div class="section">
+        <Icon name="mdi:earth" class="mr-2 text-4xl" />
+        Languages
+      </div>
       <CardGroup
         :items="[
           { icon: 'twemoji:flag-united-states', text: 'English' },
           { icon: 'twemoji:flag-china', text: '中文' },
         ]" />
 
-      <p class="section">Operating System</p>
+      <div class="section">
+        <Icon name="mdi:monitor-screenshot" class="mr-2 text-4xl" />
+        Operating System
+      </div>
       <CardGroup
         :items="[
           {
@@ -31,7 +44,10 @@
           { icon: 'logos:manjaro', text: 'Linux', subtext: 'Manjaro' },
         ]" />
 
-      <p class="section">Creativity Gear</p>
+      <div class="section">
+        <Icon name="mdi:audio-video" class="mr-2 text-4xl" />
+        Creativity Gear
+      </div>
       <CardGroup
         :items="[
           {
@@ -48,10 +64,12 @@
           },
         ]" />
 
-      <p class="section">Projects</p>
+      <div class="section">
+        <Icon name="mdi:bulletin-board" class="mr-2 text-4xl" />Projects</div>
       <ProjectList />
 
-      <p class="section">Store</p>
+      <div class="section">
+        <Icon name="mdi:store" class="mr-2 text-4xl" />Store</div>
       <DonationSection />
     </div>
 
@@ -73,7 +91,7 @@ import DonationSection from "~/components/home/DonationSection.vue"
 @import "~/assets/css/main.css";
 
 .section {
-  @apply theme-font my-6 border-l-6 border-l-pink-400 px-4 text-3xl;
+  @apply theme-font my-6 flex items-center border-l-6 border-l-pink-400 px-4 text-3xl;
 }
 
 .sidebar {

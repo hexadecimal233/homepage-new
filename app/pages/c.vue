@@ -1,6 +1,6 @@
 <template>
   <div
-    class="mx-auto flex w-full max-w-4xl flex-col rounded-2xl bg-white/10 text-white shadow-lg backdrop-blur-md">
+    class="mx-auto flex w-full max-w-4xl flex-col rounded-2xl bg-slate-800 text-white shadow-lg">
     <div class="space-y-6 px-6 py-8">
       <h1 class="text-center text-4xl font-bold text-pink-300">联系方式</h1>
 

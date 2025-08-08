@@ -1,4 +1,5 @@
 <template>
+  <!-- 侧边栏三七开 -->
   <div class="sidebar lg:max-w-[30%]">
     <SidebarCard icon="mdi:home" title="My Sites">
       <div class="mt-2 space-y-2">

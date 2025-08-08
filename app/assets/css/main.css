@@ -2,7 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-  --default-transition-duration: 250ms;
+  --default-transition-duration: 400ms;
+  
 
   /* TODO: Add accent corlor */
 }
