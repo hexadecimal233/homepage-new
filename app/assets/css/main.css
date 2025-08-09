@@ -2,9 +2,9 @@
 @import "@nuxt/ui";
 
 @theme static {
-  --font-sans: "Lilita One", sans-serif;
   --default-transition-duration: 300ms;
 
+  /* customized primary colors */
   --color-pink-50: #fcedf0;
   --color-pink-100: #fadbe0;
   --color-pink-200: #f5b2bf;

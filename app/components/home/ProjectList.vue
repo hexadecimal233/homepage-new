@@ -22,7 +22,7 @@
               loading="lazy"
               :alt="project.gh.repo" />
             <a
-              class="text-lg font-bold text-pink-300"
+              class="text-primary-300 text-lg font-bold"
               :href="project.website === '#' ? project.github : project.website"
               target="_blank">
               {{ project.title }}
@@ -36,27 +36,22 @@
         </div>
       </div>
       <div class="flex flex-1 flex-col p-3">
-        <p class="mt-1.5 flex-1 text-sm text-gray-300">
+        <p class="mt-1.5 flex-1 text-sm text-gray-500">
           {{ project.description }}
         </p>
         <div class="mt-2 flex flex-wrap gap-1.5">
-          <UBadge
-            v-for="tag in project.tags"
-            :key="tag"
-            size="sm"
-            class="rounded-full">
+          <UBadge v-for="tag in project.tags" :key="tag" size="sm">
             {{ tag }}
           </UBadge>
-        </div>
-        <div class="mt-3 flex gap-2">
-          <a
+          <UButton
             v-if="project.github !== ''"
             :href="project.github"
             target="_blank"
-            class="text-xs text-pink-400">
+            icon="mdi:open-in-new"
+            variant="outline"
+            size="sm">
             GitHub
-            <Icon name="mdi:open-in-new" class="text-xs" />
-          </a>
+          </UButton>
         </div>
       </div>
     </div>
@@ -83,7 +78,7 @@ const processedProjects = projects.map((project) => {
 }
 
 .project-item {
-  @apply flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-95 hover:border-pink-300 hover:bg-gray-50 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700;
+  @apply hover:border-primary-300 flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-[98%] hover:bg-gray-50 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700;
   min-width: 16rem;
 }
 

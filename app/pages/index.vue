@@ -1,5 +1,6 @@
 <template>
-  <UContainer class="flex w-full flex-col rounded-2xl shadow-2xl lg:flex-row">
+  <UContainer
+    class="b flex w-full max-w-4xl flex-col rounded-2xl border-2 border-neutral-300 shadow-2xl lg:flex-row dark:border-neutral-800">
     <!-- 侧边栏三七开 -->
     <div class="space-y-4 px-6 py-8 lg:max-w-[70%]">
       <ProfileCard />
@@ -96,7 +97,7 @@ import DonationSection from "~/components/home/DonationSection.vue"
 @import "~/assets/css/main.css";
 
 .section {
-  @apply theme-font my-4 flex items-center border-l-6 border-l-pink-400 px-4 text-3xl;
+  @apply theme-font my-4 flex items-center border-l-6 border-l-primary-500 px-4 text-3xl;
 }
 
 .sidebar {

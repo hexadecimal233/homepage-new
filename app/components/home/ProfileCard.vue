@@ -7,7 +7,7 @@
       sizes="sm:128px md:256px" />
     <div class="mt-2 ml-4">
       <div class="relative flex flex-wrap items-end space-x-1 text-4xl">
-        <p class="theme-font text-pink-300">Hexzii</p>
+        <p class="theme-font text-primary-400">Hexzii</p>
         <p class="text-2xl font-bold text-gray-400">(a.k.a. 盒沐子)</p>
       </div>
       <p class="font-mono text-2xl font-bold text-gray-400">
