@@ -1,11 +1,24 @@
-/* Universal Styles */
 @import "tailwindcss";
+@import "@nuxt/ui";
 
-@theme {
+@theme static {
+  --font-sans: "Lilita One", sans-serif;
   --default-transition-duration: 400ms;
-  
 
-  /* TODO: Add accent corlor */
+  --color-pink-50: #fcedf0;
+  --color-pink-100: #fadbe0;
+  --color-pink-200: #f5b2bf;
+  --color-pink-300: #f289a1;
+  --color-pink-400: #ef5883;
+  --color-pink-500: #d63368;
+  --color-pink-600: #ab2652;
+  --color-pink-700: #861c3f;
+  --color-pink-800: #5f112a;
+  --color-pink-900: #3a0718;
+  --color-pink-950: #28030e;
+
+  /* TODO：FIX */
+  --ui-radius: 0.5rem;
 }
 
 /* 主题字体 好看嘛（ */

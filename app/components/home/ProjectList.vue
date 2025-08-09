@@ -7,7 +7,7 @@
       <div
         :class="
           'image-container relative overflow-hidden rounded-t-lg bg-cover bg-center ' +
-          getRandomColor(project.id)
+          'bg-gray-500'
         "
         :style="{
           backgroundImage: project.image ? `url(${project.image})` : 'none',
@@ -40,12 +40,13 @@
           {{ project.description }}
         </p>
         <div class="mt-2 flex flex-wrap gap-1.5">
-          <span
+          <UBadge
             v-for="tag in project.tags"
             :key="tag"
-            class="rounded-full bg-pink-900/50 px-2 py-0.5 text-xs">
+            size="sm"
+            class="rounded-full">
             {{ tag }}
-          </span>
+          </UBadge>
         </div>
         <div class="mt-3 flex gap-2">
           <a
@@ -65,26 +66,6 @@
 <script lang="ts" setup>
 import { projects, extractGithubLink } from "~/utils/data"
 
-// 生成随机颜色的函数
-function getRandomColor(id: number) {
-  const colors = [
-    "bg-red-300",
-    "bg-blue-300",
-    "bg-green-300",
-    "bg-purple-300",
-    "bg-pink-300",
-    "bg-indigo-300",
-    "bg-teal-300",
-    "bg-orange-300",
-    "bg-cyan-300",
-    "bg-lime-300",
-    "bg-amber-300",
-    "bg-emerald-300",
-  ]
-
-  return colors[id % colors.length]
-}
-
 const processedProjects = projects.map((project) => {
   const githubInfo = extractGithubLink(project.github)
   return {
@@ -102,7 +83,7 @@ const processedProjects = projects.map((project) => {
 }
 
 .project-item {
-  @apply flex flex-col rounded-lg border border-transparent bg-black/30 shadow-md shadow-transparent transition-all ease-in-out hover:-translate-y-0.5 hover:scale-95 hover:border-pink-300 hover:bg-black/50 hover:shadow-pink-300;
+  @apply flex flex-col rounded-lg border border-transparent bg-black/30 shadow-md transition-all ease-in-out hover:-translate-y-0.5 hover:scale-95 hover:border-pink-300 hover:bg-black/50;
   min-width: 16rem;
 }
 

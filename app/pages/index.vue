@@ -1,11 +1,10 @@
 <template>
-  <div
-    class="mx-auto flex w-full max-w-4xl flex-col rounded-2xl bg-slate-800 text-white shadow-2xl lg:flex-row">
+  <UContainer class="flex w-full flex-col rounded-2xl shadow-2xl lg:flex-row">
     <!-- 侧边栏三七开 -->
-    <div class="space-y-2 px-6 py-8 lg:max-w-[70%]">
+    <div class="space-y-4 px-6 py-8 lg:max-w-[70%]">
       <ProfileCard />
 
-      <hr class="divider" />
+      <USeparator />
 
       <div class="section">
         <Icon name="mdi:account" class="mr-2 text-4xl" />
@@ -21,7 +20,7 @@
 
       <div class="section">
         <Icon name="mdi:earth" class="mr-2 text-4xl" />
-        Languages
+        Language
       </div>
       <CardGroup
         :items="[
@@ -41,7 +40,9 @@
             subtext: 'PC',
           },
           { icon: 'logos:android-icon', text: 'Android', subtext: 'MIUI' },
+          { icon: 'logos:apple', text: 'Apple', subtext: 'iOS' },
           { icon: 'logos:manjaro', text: 'Linux', subtext: 'Manjaro' },
+          { icon: 'logos:archlinux', text: 'Linux', subtext: 'Arch' },
         ]" />
 
       <div class="section">
@@ -65,20 +66,25 @@
         ]" />
 
       <div class="section">
-        <Icon name="mdi:bulletin-board" class="mr-2 text-4xl" />Projects</div>
+        <Icon name="mdi:bulletin-board" class="mr-2 text-4xl" />
+        Projects
+      </div>
       <ProjectList />
 
       <div class="section">
-        <Icon name="mdi:store" class="mr-2 text-4xl" />Store</div>
+        <Icon name="mdi:store" class="mr-2 text-4xl" />
+        Store
+      </div>
       <DonationSection />
     </div>
 
     <Sidebar />
-  </div>
+  </UContainer>
 </template>
 
 <script lang="ts" setup>
 import ProfileCard from "~/components/home/ProfileCard.vue"
+import { UContainer } from "#components"
 import CardGroup from "~/components/home/CardGroup.vue"
 import ProjectList from "~/components/home/ProjectList.vue"
 import Sidebar from "~/components/sidebar/Sidebar.vue"
@@ -91,7 +97,7 @@ import DonationSection from "~/components/home/DonationSection.vue"
 @import "~/assets/css/main.css";
 
 .section {
-  @apply theme-font my-6 flex items-center border-l-6 border-l-pink-400 px-4 text-3xl;
+  @apply theme-font my-4 flex items-center border-l-6 border-l-pink-400 px-4 text-3xl;
 }
 
 .sidebar {

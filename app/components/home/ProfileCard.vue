@@ -11,7 +11,7 @@
         <p class="text-2xl font-bold text-gray-400">(a.k.a. 盒沐子)</p>
       </div>
       <p class="font-mono text-2xl font-bold text-gray-400">
-        {{ age }} y/o / coding / music
+        {{ Math.floor(age) }} y/o / coding / music
         <br />
         An Unrealistic Dreamer
       </p>
@@ -20,12 +20,11 @@
 </template>
 
 <script lang="ts" setup>
-const age = Math.floor(
+const age =
   (new Date().getTime() - new Date("2007/11/08").getTime()) /
-    1000 /
-    60 /
-    60 /
-    24 /
-    365,
-)
+  1000 /
+  60 /
+  60 /
+  24 /
+  365
 </script>

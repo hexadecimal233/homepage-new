@@ -2,8 +2,7 @@
   <div class="flex min-h-screen flex-col" id="main">
     <!-- Nav Bar -->
     <div class="flex justify-center py-8">
-      <div
-        class="flex gap-2 rounded-2xl bg-slate-800 p-2 text-xl font-bold text-white">
+      <div class="flex gap-2 rounded-2xl p-2 text-xl font-bold">
         <NuxtLink
           to="/"
           class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
@@ -30,7 +29,7 @@
     <!-- FOOTER -->
     <div class="flex justify-center py-8">
       <div
-        class="text-md flex flex-col items-center justify-center rounded-2xl bg-slate-800 p-4 text-gray-400">
+        class="text-md flex flex-col items-center justify-center rounded-2xl p-4 text-gray-400">
         <p>
           This site was updated on
           {{ new Date(runtimeConfig.public.buildTime).toLocaleTimeString() }}
@@ -46,12 +45,15 @@
       </div>
     </div>
 
-    <!-- To Top Button -->
-    <IconButton
-      @click="scrollToTop"
-      class="fixed right-8 bottom-8 opacity-0 transition-all"
-      :class="showToTop ? 'opacity-100' : ''"
-      icon="mdi:arrow-up" />
+    <!-- Bottom Right Buttons -->
+    <div class="fixed right-8 bottom-8 flex flex-col items-center gap-4">
+      <UButton
+        @click="scrollToTop"
+        class="rounded-full text-3xl opacity-0 transition-all"
+        :class="showToTop ? 'opacity-100' : ''"
+        icon="i-lucide-arrow-up" />
+      <ColorModeButton />
+    </div>
   </div>
 </template>
 
@@ -73,10 +75,13 @@ const scrollToTop = () => {
 
 onMounted(() => {
   window.addEventListener("scroll", onScroll)
+  onScroll()
 })
 </script>
 
 <style scoped>
+/*
+TODO: BG
 #main {
   background-color: #0f172a;
   background-image:
@@ -84,5 +89,7 @@ onMounted(() => {
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 30px 30px;
   background-position: center center;
+  
 }
+*/
 </style>

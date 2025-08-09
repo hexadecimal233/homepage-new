@@ -4,7 +4,7 @@
       <Icon v-if="item.icon" :name="item.icon" class="text-3xl" />
       <img v-if="item.image" :src="item.image" class="h-12" :alt="item.text" />
       <p>{{ item.text }}</p>
-      <p v-if="item.subtext" class="text-md text-gray-400">
+      <p v-if="item.subtext" class="text-md">
         {{ item.subtext }}
       </p>
     </div>
