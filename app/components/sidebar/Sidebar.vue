@@ -1,6 +1,7 @@
 <template>
   <!-- 侧边栏三七开 -->
-  <div class="sidebar lg:max-w-[30%]">
+  <div
+    class="my-4 overflow-hidden border-gray-700 p-4 lg:max-w-[30%] lg:border-l-2">
     <SidebarCard icon="mdi:home" title="My Sites">
       <div class="mt-2 space-y-2">
         <div v-for="link in sites">
@@ -55,11 +56,3 @@
 import SidebarCard from "./SidebarCard.vue"
 import { friendLinks, sites } from "~/utils/data"
 </script>
-
-<style scoped>
-@import "tailwindcss";
-
-.sidebar {
-  @apply my-4 overflow-hidden border-gray-700 p-4 lg:border-l-2;
-}
-</style>

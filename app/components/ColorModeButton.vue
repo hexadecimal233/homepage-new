@@ -13,7 +13,7 @@ const isDark = computed({
 
 <template>
   <UButton
-    :icon="isDark ? 'i-lucide-moon' : 'i-lucide-sun'"
+    :icon="isDark ? 'mdi:weather-night' : 'mdi:weather-sunny'"
     class="rounded-full text-3xl"
     color="neutral"
     @click="isDark = !isDark" />

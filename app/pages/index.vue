@@ -93,7 +93,6 @@ import DonationSection from "~/components/home/DonationSection.vue"
 </script>
 
 <style scoped>
-@import "tailwindcss";
 @import "~/assets/css/main.css";
 
 .section {

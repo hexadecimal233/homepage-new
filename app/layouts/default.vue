@@ -6,7 +6,7 @@
         <NuxtLink
           to="/"
           class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
-          <Icon name="mdi-home" />
+          <Icon name="mdi:home" />
           <span class="">Home</span>
         </NuxtLink>
         <a
@@ -51,7 +51,7 @@
         @click="scrollToTop"
         class="rounded-full text-3xl opacity-0 transition-all"
         :class="showToTop ? 'opacity-100' : ''"
-        icon="i-lucide-arrow-up" />
+        icon="mdi:arrow-up" />
       <ColorModeButton />
     </div>
   </div>
@@ -89,7 +89,6 @@ TODO: BG
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
   background-size: 30px 30px;
   background-position: center center;
-  
 }
 */
 </style>

@@ -23,7 +23,7 @@ defineProps<{
 </script>
 
 <style scoped>
-@import "tailwindcss";
+@import "~/assets/css/main.css";
 
 .cards {
   @apply my-2 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4;

@@ -4,9 +4,9 @@ import tailwindcss from "@tailwindcss/vite"
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
-  css: ["~/assets/css/main.css"],
   vite: { plugins: [tailwindcss()] },
   modules: ["@nuxt/icon", "@nuxt/image", "@nuxt/ui"],
+  css: ["~/assets/css/main.css"],
   runtimeConfig: {
     public: {
       buildTime: process.env.BUILD_TIME || new Date().toISOString(),

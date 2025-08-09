@@ -75,7 +75,7 @@ const processedProjects = projects.map((project) => {
 })
 </script>
 <style scoped>
-@import "tailwindcss";
+@import "~/assets/css/main.css";
 
 .projects {
   @apply grid grid-cols-1 gap-4 md:grid-cols-2;
