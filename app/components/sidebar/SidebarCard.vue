@@ -1,5 +1,6 @@
 <template>
-  <div class="mb-4 rounded-xl bg-black/30 p-4">
+  <div
+    class="mb-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800">
     <div class="flex items-center gap-2">
       <Icon v-if="icon" :name="icon" class="text-2xl text-pink-300" />
       <p class="theme-font text-xl">

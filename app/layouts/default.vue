@@ -2,10 +2,11 @@
   <div class="flex min-h-screen flex-col" id="main">
     <!-- Nav Bar -->
     <div class="flex justify-center py-8">
-      <div class="flex gap-2 rounded-2xl p-2 text-xl font-bold">
+      <div
+        class="flex gap-2 rounded-2xl border border-gray-200 bg-white p-2 text-xl font-bold shadow-sm dark:border-gray-700 dark:bg-gray-800">
         <NuxtLink
           to="/"
-          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
+          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-gray-100 sm:min-w-32 dark:hover:bg-gray-700">
           <Icon name="mdi:home" />
           <span class="">Home</span>
         </NuxtLink>
@@ -14,7 +15,7 @@
           :key="item.url"
           :href="item.url"
           target="_blank"
-          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-white/20 sm:min-w-32">
+          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-gray-100 sm:min-w-32 dark:hover:bg-gray-700">
           <Icon :name="item.icon" />
           <span class="">{{ item.name }}</span>
         </a>

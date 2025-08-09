@@ -2,7 +2,7 @@
   <div class="theme-font w-full space-y-2">
     <div v-for="category in links" :key="category.name" class="w-full">
       <div
-        class="flex cursor-pointer items-center justify-between bg-black/20 p-2 hover:bg-black/40"
+        class="flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
         @click="toggleCategory(category.name)">
         <div class="flex items-center space-x-2">
           <Icon
@@ -20,7 +20,7 @@
           <a
             :href="link.url"
             target="_blank"
-            class="flex flex-row items-center space-x-1 rounded-lg bg-black/30 p-2 transition-all hover:-translate-y-0.5 hover:bg-black/50">
+            class="flex flex-row items-center space-x-1 rounded-lg border border-gray-200 bg-white p-2 transition-all hover:-translate-y-0.5 hover:bg-gray-50 hover:shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
             <Icon :name="link.icon" />
             <NuxtImg
               :src="link.image"

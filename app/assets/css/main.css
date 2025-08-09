@@ -3,7 +3,7 @@
 
 @theme static {
   --font-sans: "Lilita One", sans-serif;
-  --default-transition-duration: 400ms;
+  --default-transition-duration: 300ms;
 
   --color-pink-50: #fcedf0;
   --color-pink-100: #fadbe0;

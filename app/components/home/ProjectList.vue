@@ -83,7 +83,7 @@ const processedProjects = projects.map((project) => {
 }
 
 .project-item {
-  @apply flex flex-col rounded-lg border border-transparent bg-black/30 shadow-md transition-all ease-in-out hover:-translate-y-0.5 hover:scale-95 hover:border-pink-300 hover:bg-black/50;
+  @apply flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-95 hover:border-pink-300 hover:bg-gray-50 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700;
   min-width: 16rem;
 }
 

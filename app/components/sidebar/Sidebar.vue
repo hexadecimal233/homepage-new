@@ -8,10 +8,12 @@
           <a
             :href="link.url"
             target="_blank"
-            class="flex items-center gap-2 rounded-lg bg-black/20 p-2 transition-all hover:bg-black/40">
+            class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white p-2 transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
             <div
-              class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-500/20">
-              <Icon :name="link.icon" class="text-2xl text-pink-300" />
+              class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-50 dark:bg-pink-900">
+              <Icon
+                :name="link.icon"
+                class="text-2xl text-pink-500 dark:text-pink-300" />
             </div>
             <div class="min-w-0 flex-1">
               <p class="truncate font-bold">{{ link.name }}</p>
@@ -29,9 +31,9 @@
             :href="link.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="flex items-center gap-2 rounded-lg bg-black/20 p-2 transition-all hover:bg-black/40">
+            class="flex items-center gap-2 rounded-lg border border-gray-200 bg-white p-2 transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
             <div
-              class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-500/20">
+              class="flex h-12 w-12 items-center justify-center rounded-lg bg-pink-50 dark:bg-pink-900">
               <NuxtImg
                 v-if="link.image"
                 class="rounded-lg"
@@ -39,7 +41,10 @@
                 loading="lazy"
                 :alt="link.name"
                 @error="link.image = undefined" />
-              <Icon v-else name="mdi:home" class="text-2xl text-pink-300" />
+              <Icon
+                v-else
+                name="mdi:home"
+                class="text-2xl text-pink-500 dark:text-pink-300" />
             </div>
             <div class="min-w-0 flex-1">
               <p class="truncate font-bold">{{ link.name }}</p>
