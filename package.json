@@ -22,7 +22,9 @@
   },
   "devDependencies": {
     "@iconify-json/logos": "^1.2.5",
+    "@iconify-json/lucide": "^1.2.3",
     "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/noto": "^1.2.6",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.6.14"
   }

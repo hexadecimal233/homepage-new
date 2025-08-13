@@ -2,25 +2,21 @@
   <div class="theme-font w-full space-y-2">
     <div v-for="category in links" :key="category.name" class="w-full">
       <div
-        class="flex cursor-pointer items-center justify-between rounded-lg border border-gray-200 bg-white p-2 transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600"
+        class="flex cursor-pointer items-center justify-between rounded-lg border border-neutral-200 p-2 transition-all hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-950"
         @click="toggleCategory(category.name)">
         <div class="flex items-center space-x-2">
-          <Icon
-            name="mdi:chevron-down"
-            :class="{ 'rotate-180': isExpanded(category.name) }" />
+          <Icon name="lucide:chevron-down" :class="{ 'rotate-180': isExpanded(category.name) }" />
           <p class="text-xl">{{ category.name }}</p>
         </div>
         <p class="text-sm text-gray-400">{{ category.desc }}</p>
       </div>
 
-      <div
-        v-show="isExpanded(category.name)"
-        class="mt-2 space-y-2 overflow-hidden pl-2">
+      <div v-show="isExpanded(category.name)" class="mt-2 space-y-2 overflow-hidden pl-2">
         <div v-for="link in category.links" :key="link.name">
           <a
             :href="link.url"
             target="_blank"
-            class="flex flex-row items-center space-x-1 rounded-lg border border-gray-200 bg-white p-2 transition-all hover:-translate-y-0.5 hover:bg-gray-50 hover:shadow-sm dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
+            class="flex flex-row items-center space-x-1 rounded-lg border border-neutral-200 p-2 transition-all hover:-translate-y-0.5 hover:bg-neutral-50 hover:shadow-sm dark:border-neutral-600 dark:hover:bg-neutral-950">
             <Icon :name="link.icon" />
             <NuxtImg
               :src="link.image"

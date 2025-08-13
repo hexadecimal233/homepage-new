@@ -16,15 +16,13 @@ useHead(() => ({
         <span class="text-[10rem] font-bold md:text-[15rem]">
           {{ error?.statusCode }}
         </span>
-        <div class="text-3xl font-bold text-gray-200 md:text-4xl">
+        <div class="text-3xl font-bold text-neutral-800 md:text-4xl dark:text-neutral-200">
           {{ error?.statusMessage || "Something went wrong" }}
         </div>
 
-        <p class="text-gray-400">
-          Yes... We're just experiencing some little issues here. :P
-        </p>
+        <p>Yes... We're just experiencing some little issues here. :P</p>
 
-        <UButton icon="mdi:home" size="xl" to="/">Back to home</UButton>
+        <UButton icon="lucide:house" size="xl" to="/">Back to home</UButton>
       </div>
     </div>
   </NuxtLayout>

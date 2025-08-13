@@ -1,8 +1,8 @@
 <template>
   <div
-    class="mb-4 rounded-xl border border-gray-200 bg-white p-4 shadow-sm dark:border-gray-700 dark:bg-gray-800">
+    class="mb-4 rounded-xl border border-neutral-200 bg-white p-4 shadow-sm dark:border-neutral-700 dark:bg-neutral-800">
     <div class="flex items-center gap-2">
-      <Icon v-if="icon" :name="icon" class="text-2xl text-primary-300" />
+      <Icon v-if="icon" :name="icon" class="text-primary-300 text-2xl" />
       <p class="theme-font text-xl">
         {{ title }}
       </p>

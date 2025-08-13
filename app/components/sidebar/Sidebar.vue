@@ -1,19 +1,17 @@
 <template>
   <!-- 侧边栏三七开 -->
-  <div
-    class="my-4 overflow-hidden border-neutral-300 p-4 lg:max-w-[30%] lg:border-l-2 dark:border-neutral-800">
-    <SidebarCard icon="mdi:home" title="My Sites">
+  <div class="my-4 overflow-hidden border-neutral-300 lg:max-w-[30%] dark:border-neutral-800">
+    <!-- 我的网站 -->
+    <SidebarCard icon="lucide:house" title="My Sites">
       <div class="mt-2 space-y-2">
         <div v-for="link in sites">
           <a
             :href="link.url"
             target="_blank"
-            class="card-shadow flex items-center gap-2 rounded-lg border border-gray-200 bg-white p-2 transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
+            class="card-shadow flex items-center gap-2 rounded-lg border border-neutral-200 p-2 transition-all hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-950">
             <div
               class="bg-primary-50 dark:bg-primary-900 flex h-12 w-12 items-center justify-center rounded-lg">
-              <Icon
-                :name="link.icon"
-                class="text-primary-500 dark:text-primary-300 text-2xl" />
+              <Icon :name="link.icon" class="text-primary-500 dark:text-primary-300 text-2xl" />
             </div>
             <div class="min-w-0 flex-1">
               <p class="truncate font-bold">{{ link.name }}</p>
@@ -24,14 +22,15 @@
       </div>
     </SidebarCard>
 
-    <SidebarCard icon="mdi:link" title="Friends">
+    <!-- 友链 -->
+    <SidebarCard icon="mdi:heart" title="Friends">
       <div class="mt-2 h-full space-y-2">
         <div v-for="link in friendLinks" :key="link.url">
           <a
             :href="link.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="card-shadow flex items-center gap-2 rounded-lg border border-gray-200 bg-white p-2 transition-all hover:bg-gray-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
+            class="card-shadow flex items-center gap-2 rounded-lg border border-neutral-200 p-2 transition-all hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-950">
             <div
               class="bg-primary-50 dark:bg-primary-900 flex h-12 w-12 items-center justify-center rounded-lg">
               <NuxtImg
@@ -43,7 +42,7 @@
                 @error="link.image = undefined" />
               <Icon
                 v-else
-                name="mdi:home"
+                name="lucide:house"
                 class="text-primary-500 dark:text-primary-300 text-2xl" />
             </div>
             <div class="min-w-0 flex-1">
@@ -53,6 +52,14 @@
           </a>
         </div>
       </div>
+    </SidebarCard>
+
+    <!-- 统计数据 -->
+    <SidebarCard icon="lucide:stamp" title="Statistics">
+      <NuxtImg
+        loading="lazy"
+        src="https://count.getloli.com/get/@6475578645547358_hm?theme=moebooru"
+        class="w-full" />
     </SidebarCard>
   </div>
 </template>

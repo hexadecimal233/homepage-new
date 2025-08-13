@@ -39,9 +39,15 @@ importers:
       '@iconify-json/logos':
         specifier: ^1.2.5
         version: 1.2.5
+      '@iconify-json/lucide':
+        specifier: ^1.2.3
+        version: 1.2.62
       '@iconify-json/mdi':
         specifier: ^1.2.3
         version: 1.2.3
+      '@iconify-json/noto':
+        specifier: ^1.2.6
+        version: 1.2.6
       prettier:
         specifier: ^3.6.2
         version: 3.6.2
@@ -544,8 +550,14 @@ packages:
   '@iconify-json/logos@1.2.5':
     resolution: {integrity: sha512-WR8+9kFwx1tIR+hWpKYC+rpVkAuzHyaVxZRfhGGIjqCfgbodK7rS4+OZhktdKtZKKcdmhpLZKvlmRm4IA4dKRg==}
 
+  '@iconify-json/lucide@1.2.62':
+    resolution: {integrity: sha512-K0KfhvP5YQZ2KraOgCm6jJbwwzQCVocvXcdMpDou5uLa48QnLBRW/dQ8VDGmxHTGpwF9EqLlvnUSinH2i6xs3Q==}
+
   '@iconify-json/mdi@1.2.3':
     resolution: {integrity: sha512-O3cLwbDOK7NNDf2ihaQOH5F9JglnulNDFV7WprU2dSoZu3h3cWH//h74uQAB87brHmvFVxIOkuBX2sZSzYhScg==}
+
+  '@iconify-json/noto@1.2.6':
+    resolution: {integrity: sha512-/op9JHrJv8RZgM0trdlLoedcx9jBNZ6kYvTTRQrp9t8OWpqR60k0tHZ5Nt9SxT/ebQsrPbtVPUuv+odWwlQkUQ==}
 
   '@iconify/collections@1.0.573':
     resolution: {integrity: sha512-eEyZWQ223YX76w7URx+7O7xu5uTSJ9SJ1z7JB9YumWXoZOXVmNasyuOIU3JdQfCmvc1/qpT1dMhY3d65wgHs5Q==}
@@ -5043,7 +5055,15 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
+  '@iconify-json/lucide@1.2.62':
+    dependencies:
+      '@iconify/types': 2.0.0
+
   '@iconify-json/mdi@1.2.3':
+    dependencies:
+      '@iconify/types': 2.0.0
+
+  '@iconify-json/noto@1.2.6':
     dependencies:
       '@iconify/types': 2.0.0
 

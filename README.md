@@ -1,3 +1,8 @@
-# Nuxt Static Site Template
+# Homepage
 
-This is a template for a static site built with Nuxt.js. It includes a basic layout, pages, and components.
+## Todolist
+
+[ ] 动态背景切换
+[ ] 添加技术栈（Github首页工作流script）
+[ ] 时间线
+[ ] My latest vids (B站API后端)

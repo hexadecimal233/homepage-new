@@ -3,11 +3,11 @@
     <!-- Nav Bar -->
     <div class="flex justify-center py-8">
       <div
-        class="flex gap-2 rounded-2xl border border-gray-200 bg-white p-2 text-xl font-bold dark:border-gray-700 dark:bg-gray-800">
+        class="flex gap-2 rounded-2xl border border-neutral-200 p-2 text-xl font-bold dark:border-neutral-700 dark:bg-neutral-800">
         <NuxtLink
           to="/"
-          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-gray-100 sm:min-w-32 dark:hover:bg-gray-700">
-          <Icon name="mdi:home" />
+          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-neutral-100 sm:min-w-32 dark:hover:bg-neutral-700">
+          <Icon name="lucide:house" />
           <span class="">Home</span>
         </NuxtLink>
         <a
@@ -15,7 +15,7 @@
           :key="item.url"
           :href="item.url"
           target="_blank"
-          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-gray-100 sm:min-w-32 dark:hover:bg-gray-700">
+          class="flex min-w-0 items-center justify-center gap-2 rounded-lg p-3 transition-all hover:bg-neutral-100 sm:min-w-32 dark:hover:bg-neutral-700">
           <Icon :name="item.icon" />
           <span class="">{{ item.name }}</span>
         </a>
@@ -29,17 +29,15 @@
 
     <!-- FOOTER -->
     <div class="flex justify-center py-8">
-      <div
-        class="text-md flex flex-col items-center justify-center rounded-2xl p-4 text-gray-400">
+      <div class="text-md flex flex-col items-center justify-center rounded-2xl p-4 text-gray-400">
+        <p>Made with ❤️</p>
         <p>
           This site was updated on
           {{ new Date(runtimeConfig.public.buildTime).toLocaleTimeString() }}
         </p>
         <div class="flex">
-          <Icon name="simple-icons:github" class="text-xl" />
-          <a
-            href="https://github.com/hexadecimal233/homepage-new"
-            target="_blank">
+          <Icon name="simple-icons:github" class="mr-2 text-xl" />
+          <a href="https://github.com/hexadecimal233/homepage-new" target="_blank">
             Open me at Github
           </a>
         </div>
@@ -52,7 +50,7 @@
         @click="scrollToTop"
         class="rounded-full text-3xl opacity-0 transition-all"
         :class="showToTop ? 'opacity-100' : ''"
-        icon="mdi:arrow-up" />
+        icon="lucide:arrow-big-up" />
       <ColorModeButton />
     </div>
   </div>

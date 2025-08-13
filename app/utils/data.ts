@@ -45,9 +45,7 @@ interface NavBarItem {
 
 export function extractGithubLink(url: string) {
   const match = url.match(/github\.com\/(.+)\/(.+)/)
-  return match
-    ? { user: match[1], repo: match[2] }
-    : { user: "Error", repo: "Error" }
+  return match ? { user: match[1], repo: match[2] } : { user: "Error", repo: "Error" }
 }
 
 export const projects: Project[] = [
@@ -136,7 +134,7 @@ export const projects: Project[] = [
 export const links: CategoryLink[] = [
   {
     name: "Contact",
-    desc: "Reach me!",
+    desc: "Reach me.",
     links: [
       {
         name: "Telegram",
@@ -158,15 +156,15 @@ export const links: CategoryLink[] = [
       },
       {
         name: "Email",
-        desc: "contact@onlyra1n.top",
-        icon: "mdi:email",
-        url: "mailto:contact@onlyra1n.top",
+        desc: "hexzii@nichijou.moe",
+        icon: "lucide:mail",
+        url: "mailto:hexzii@nichijou.moe",
       },
     ],
   },
   {
     name: "Chat",
-    desc: "Chat with me!",
+    desc: "Me & My friends.",
     links: [
       {
         name: "QQ Group",
@@ -248,7 +246,7 @@ export const links: CategoryLink[] = [
         name: "Bluesky",
         desc: "盒沐子 / Hexzii⭐",
         icon: "simple-icons:bluesky",
-        url: "https://bsky.app/profile/onlyra1n.top",
+        url: "https://bsky.app/profile/nichijou.moe",
       },
       {
         name: "X (Main)",
@@ -325,7 +323,7 @@ export const links: CategoryLink[] = [
         icon: "simple-icons:codeberg",
         url: "https://codeberg.org/hexzii",
       },
-      // these are placeholders
+      // 下面都是ai瞎编的
       {
         name: "Figma",
         desc: "Hexzii⭐",
@@ -424,23 +422,29 @@ export const friendLinks: FriendLink[] = [
     desc: "Snowykami的主页",
     image: "https://q.qlogo.cn/g?b=qq&nk=2751454815&s=640",
   },
-  // {
-  //   name: "Wanna submit yours?",
-  //   url: "#",
-  //   desc: "Leave Site Name, Site Link (Image / Description is optional) and reach me.",
-  // },
+  // TODO: 为别的想添加友链的人提供本站信息
 ]
 
 export const sites: SiteLink[] = [
   {
     name: "My Profile Page",
     url: "https://nichijou.moe",
-    icon: "mdi:account",
+    icon: "lucide:user",
   },
   {
     name: "My Blog",
-    url: "https://me.onlyra1n.top",
-    icon: "mdi:book-open",
+    url: "https://blog.nichijou.moe",
+    icon: "lucide:book-open",
+  },
+  {
+    name: "Gitea",
+    url: "https://git.nichijou.moe",
+    icon: "mdi:git",
+  },
+  {
+    name: "Alist",
+    url: "https://alist.nichijou.moe",
+    icon: "mdi:folder-network",
   },
   {
     name: "Uptime Monitor",
@@ -450,19 +454,5 @@ export const sites: SiteLink[] = [
 ]
 
 export const navBarItems: NavBarItem[] = [
-  {
-    name: "Ech0",
-    url: "https://ech0.nichijou.moe",
-    icon: "mdi:note-text",
-  },
-  {
-    name: "Alist",
-    url: "https://alist.nichijou.moe",
-    icon: "mdi:folder-network",
-  },
-  {
-    name: "Gitea",
-    url: "https://git.nichijou.moe",
-    icon: "mdi:git",
-  },
+  // TODO: 这里只应该放站内链接
 ]

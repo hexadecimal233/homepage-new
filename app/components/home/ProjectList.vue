@@ -1,19 +1,15 @@
 <template>
   <div class="projects">
-    <div
-      v-for="project in processedProjects"
-      :key="project.id"
-      class="project-item">
+    <div v-for="project in processedProjects" :key="project.id" class="project-item">
       <div
         :class="
           'image-container relative overflow-hidden rounded-t-lg bg-cover bg-center ' +
-          'bg-gray-500'
+          'bg-neutral-500'
         "
         :style="{
           backgroundImage: project.image ? `url(${project.image})` : 'none',
         }">
-        <div
-          class="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
         <div class="absolute inset-0 flex items-start justify-between p-3">
           <div class="flex items-center">
             <NuxtImg
@@ -36,7 +32,7 @@
         </div>
       </div>
       <div class="flex flex-1 flex-col p-3">
-        <p class="mt-1.5 flex-1 text-sm text-gray-500">
+        <p class="mt-1.5 flex-1 text-sm text-neutral-500">
           {{ project.description }}
         </p>
         <div class="mt-2 flex flex-wrap gap-1.5">
@@ -47,7 +43,7 @@
             v-if="project.github !== ''"
             :href="project.github"
             target="_blank"
-            icon="mdi:open-in-new"
+            icon="lucide:square-arrow-out-up-right"
             variant="outline"
             size="sm">
             GitHub
@@ -72,13 +68,17 @@ const processedProjects = projects.map((project) => {
 <style scoped>
 @import "~/assets/css/main.css";
 
+a {
+  @apply underline;
+}
+
 .projects {
   @apply grid grid-cols-1 gap-4 md:grid-cols-2;
   grid-auto-columns: 16rem;
 }
 
 .project-item {
-  @apply hover:border-primary-300 flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-[98%] hover:bg-gray-50 hover:shadow-md dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700;
+  @apply hover:border-primary-300 flex flex-col rounded-lg border border-neutral-200 shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-[98%] hover:bg-gray-50 hover:shadow-md dark:border-neutral-700 dark:hover:bg-neutral-950;
   min-width: 16rem;
 }
 
