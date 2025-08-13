@@ -8,7 +8,7 @@
           <a
             :href="link.url"
             target="_blank"
-            class="card-shadow flex items-center gap-2 rounded-lg border border-neutral-200 p-2 transition-all hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-950">
+            class="flex items-center gap-2 rounded-lg p-2 shadow-sm transition-all hover:bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-950">
             <div
               class="bg-primary-50 dark:bg-primary-900 flex h-12 w-12 items-center justify-center rounded-lg">
               <Icon :name="link.icon" class="text-primary-500 dark:text-primary-300 text-2xl" />
@@ -30,7 +30,7 @@
             :href="link.url"
             target="_blank"
             rel="noopener noreferrer"
-            class="card-shadow flex items-center gap-2 rounded-lg border border-neutral-200 p-2 transition-all hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-950">
+            class="flex items-center gap-2 rounded-lg p-2 shadow-sm transition-all hover:bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-950">
             <div
               class="bg-primary-50 dark:bg-primary-900 flex h-12 w-12 items-center justify-center rounded-lg">
               <NuxtImg

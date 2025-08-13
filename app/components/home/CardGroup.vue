@@ -30,6 +30,6 @@ defineProps<{
 }
 
 .card-item {
-  @apply flex flex-col items-center justify-center rounded-lg border border-neutral-200 px-2 py-4 text-xl shadow-lg transition-all hover:bg-neutral-50 dark:border-neutral-700 dark:hover:bg-neutral-950;
+  @apply flex flex-col items-center justify-center rounded-lg px-2 py-4 text-xl shadow-sm transition-all hover:bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-950;
 }
 </style>

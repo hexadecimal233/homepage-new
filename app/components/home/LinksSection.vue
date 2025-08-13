@@ -2,7 +2,7 @@
   <div class="theme-font w-full space-y-2">
     <div v-for="category in links" :key="category.name" class="w-full">
       <div
-        class="flex cursor-pointer items-center justify-between rounded-lg border border-neutral-200 p-2 transition-all hover:bg-neutral-50 dark:border-neutral-600 dark:hover:bg-neutral-950"
+        class="flex cursor-pointer items-center justify-between rounded-lg p-2 shadow-sm transition-all hover:bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-950"
         @click="toggleCategory(category.name)">
         <div class="flex items-center space-x-2">
           <Icon name="lucide:chevron-down" :class="{ 'rotate-180': isExpanded(category.name) }" />
@@ -16,7 +16,7 @@
           <a
             :href="link.url"
             target="_blank"
-            class="flex flex-row items-center space-x-1 rounded-lg border border-neutral-200 p-2 transition-all hover:-translate-y-0.5 hover:bg-neutral-50 hover:shadow-sm dark:border-neutral-600 dark:hover:bg-neutral-950">
+            class="flex flex-row items-center space-x-1 rounded-lg p-2 shadow-sm transition-all hover:-translate-y-0.5 hover:bg-neutral-50 dark:bg-neutral-800 dark:hover:bg-neutral-950">
             <Icon :name="link.icon" />
             <NuxtImg
               :src="link.image"

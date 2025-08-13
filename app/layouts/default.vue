@@ -1,7 +1,7 @@
 <template>
   <div class="flex min-h-screen flex-col">
     <!-- 彩虹进度条 -->
-    <div ref="progressBar" class="progress-bar fixed top-0 left-0 z-50 h-1 w-0"></div>
+    <div ref="progressBar" class="progress-bar fixed top-0 left-0 z-50 h-1 rounded-b-md"></div>
     <!-- 导航栏 -->
     <div class="flex justify-center py-8">
       <div
@@ -25,14 +25,18 @@
     </div>
 
     <!-- 主页面 -->
-    <div class="flex-1">
+    <UContainer class="w-full max-w-4xl flex-1">
       <slot />
-    </div>
+    </UContainer>
 
     <!-- FOOTER -->
     <div class="flex justify-center py-8">
-      <div class="text-md flex flex-col items-center justify-center rounded-2xl p-4 text-gray-400">
-        <p>Made with ❤️ by Hexzii</p>
+      <div class="text-md flex flex-col items-center justify-center p-4 text-gray-400">
+        <p>
+          Made with
+          <Icon name="mdi:heart" />
+          by Hexzii
+        </p>
         <p>
           This site was updated on
           {{
@@ -41,12 +45,14 @@
             new Date(runtimeConfig.public.buildTime).toLocaleTimeString()
           }}
         </p>
-        <div class="flex">
-          <Icon name="simple-icons:github" class="mr-2 text-xl" />
-          <a href="https://github.com/hexadecimal233/homepage-new" target="_blank">
-            Open me at Github
-          </a>
-        </div>
+        <UButton
+          icon="mdi:github"
+          href="https://github.com/hexadecimal233/homepage-new"
+          size="lg"
+          target="_blank"
+          variant="link">
+          Open me at Github
+        </UButton>
       </div>
     </div>
 

@@ -2,7 +2,7 @@
   <div class="flex">
     <img
       src="https://gravatar.loli.net/avatar/daca850545a454e39660992d1163e88e?size=256&cache=1718432418567"
-      class="h-32 w-32 rounded-xl border-4 shadow-lg"
+      class="h-32 w-32 rounded-xl shadow-lg"
       alt="Hexzii"
       sizes="sm:128px md:256px" />
     <div class="mt-2 ml-4">

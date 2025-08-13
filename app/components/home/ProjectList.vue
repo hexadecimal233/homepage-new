@@ -44,7 +44,7 @@
             :href="project.github"
             target="_blank"
             icon="lucide:square-arrow-out-up-right"
-            variant="outline"
+            variant="link"
             size="sm">
             GitHub
           </UButton>
@@ -78,7 +78,7 @@ a {
 }
 
 .project-item {
-  @apply hover:border-primary-300 flex flex-col rounded-lg border border-neutral-200 shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-[98%] hover:bg-gray-50 hover:shadow-md dark:border-neutral-700 dark:hover:bg-neutral-950;
+  @apply flex flex-col rounded-lg shadow-sm transition-all ease-in-out hover:-translate-y-0.5 hover:scale-[98%] hover:bg-gray-50 hover:shadow-md dark:bg-neutral-800 dark:hover:bg-neutral-950;
   min-width: 16rem;
 }
 
