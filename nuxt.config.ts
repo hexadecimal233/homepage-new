@@ -12,6 +12,12 @@ export default defineNuxtConfig({
       buildTime: process.env.BUILD_TIME || new Date().toISOString(),
     },
   },
+  icon: {
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 256,
+    },
+  },
   app: {
     head: {
       htmlAttrs: {

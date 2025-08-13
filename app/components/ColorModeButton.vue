@@ -12,9 +12,11 @@ const isDark = computed({
 </script>
 
 <template>
-  <UButton
-    :icon="isDark ? 'lucide:moon' : 'lucide:sun'"
-    class="rounded-full text-3xl"
-    color="neutral"
-    @click="isDark = !isDark" />
+  <ClientOnly v-if="!colorMode?.forced">
+    <UButton
+      :icon="isDark ? 'lucide:moon' : 'lucide:sun'"
+      class="rounded-full text-3xl"
+      color="neutral"
+      @click="isDark = !isDark" />
+  </ClientOnly>
 </template>
