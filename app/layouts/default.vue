@@ -62,6 +62,7 @@
         @click="scrollToTop"
         class="rounded-full text-3xl opacity-0 transition-all"
         :class="showToTop ? 'opacity-100' : ''"
+        aria-label="Scroll to top"
         icon="lucide:arrow-big-up" />
       <ColorModeButton />
     </div>

@@ -7,7 +7,7 @@
 @theme static {
   --default-transition-duration: 300ms;
 
-  /* customized primary colors */
+  /* 自定义主题色 */
   --color-pink-50: #fcedf0;
   --color-pink-100: #fadbe0;
   --color-pink-200: #f5b2bf;
@@ -32,7 +32,7 @@
   @apply my-4 border-t-5 border-dashed border-neutral-700;
 }
 
-/* Some interesting animations!!!! */
+/* 好玩的小动画 */
 
 .minecraft-splash {
   color: #fefe00;

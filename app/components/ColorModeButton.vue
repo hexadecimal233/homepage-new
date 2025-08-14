@@ -17,6 +17,7 @@ const isDark = computed({
       :icon="isDark ? 'lucide:moon' : 'lucide:sun'"
       class="rounded-full text-3xl"
       color="neutral"
+      aria-label="Color Mode"
       @click="isDark = !isDark" />
   </ClientOnly>
 </template>

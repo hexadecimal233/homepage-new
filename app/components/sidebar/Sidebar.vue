@@ -59,7 +59,8 @@
       <NuxtImg
         loading="lazy"
         src="https://count.getloli.com/get/@6475578645547358_hm?theme=moebooru"
-        class="w-full" />
+        class="w-full"
+        alt="GetLoli" />
     </SidebarCard>
   </div>
 </template>
